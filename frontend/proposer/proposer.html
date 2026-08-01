@@ -24,12 +24,19 @@
 
          *** NE PAS MODIFIER les id ci-dessous — main.js les utilise ***
          ===================================================================== -->
-    <form id="form-proposer">
+
+         <form id="form-proposer">
       <label for="p-depart">Quartier de départ</label>
-      <select id="p-depart"></select>
+      <select id="p-depart"><option value="">Sélectionnez un quartier</option>
+  <option value="1">Bacongo</option>
+  <option value="2">poto-poto</option>
+</select>
 
       <label for="p-arrivee">Quartier d'arrivée</label>
-      <select id="p-arrivee"></select>
+      <select id="p-arrivee"><option value="">Sélectionnez un quartier</option>
+  <option value="2">Bacongo</option>
+  <option value="3">poto-poto</option>
+</select>
 
       <label for="p-heure">Heure (HH:MM)</label>
       <input type="text" id="p-heure" placeholder="07:30">
@@ -41,7 +48,7 @@
       <input type="number" id="p-prix" min="1">
 
       <button type="submit">Publier mon trajet</button>
-    </form>
+    </form></select>
 
     <!-- Zone d'erreurs de validation — TODO (Dev FS4) : mettre en forme la
          liste <ul><li> injectée par main.js en cas de formulaire invalide.
