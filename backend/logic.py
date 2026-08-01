@@ -140,7 +140,8 @@ def trier_par_heure(trajets):
         fonctionne directement ("07:00" < "07:30" < "08:00" est vrai en
         comparaison de chaînes), pas besoin de les convertir en nombres.
     """
-    # TODO : à compléter
+    # TODO : def trier_par_heure(trajets):
+    return sorted(trajets, key=lambda trajet: trajet["heure"])
     pass
 
 
@@ -159,7 +160,8 @@ def trier_par_prix_croissant(trajets):
         entrée -> [{"prix_place": 700}, {"prix_place": 400}, {"prix_place": 500}]
         sortie -> [{"prix_place": 400}, {"prix_place": 500}, {"prix_place": 700}]
     """
-    # TODO : à compléter
+    # TODO : def trier_par_prix_croissant(trajets):
+    return sorted(trajets, key=lambda trajet: trajet["prix_place"])
     pass
 
 
@@ -193,7 +195,16 @@ def compter_reservations_par_trajet(trajet_id, reservations):
         (les 2 réservations du trajet 1 qui ne sont pas "annule";
         la réservation du trajet 2 ne compte pas, ce n'est pas le bon trajet)
     """
-    # TODO : à compléter
+    # TODO : 
+    compteur = 0
+
+    for reservation in reservations:
+
+        if reservation["trajet_id"] == trajet_id and reservation["statut"] != "annule":
+
+            compteur += 1
+
+    return compteur
     pass
 
 
@@ -239,7 +250,37 @@ def verifier_place_disponible(trajet_id, trajets, reservations):
         (3 places au total, 2 déjà prises par des réservations actives,
         il en reste 1)
     """
-    # TODO : à compléter
+    # TODO : 
+    for trajet in trajets:
+
+        if trajet["id"] == trajet_id:
+
+            reservations_actives = compter_reservations_par_trajet(
+                trajet_id,
+                reservations
+            )
+
+            places_restantes = trajet["places_dispo"] - reservations_actives
+
+            if places_restantes > 0:
+
+                return {
+                    "place_dispo": True,
+                    "places_restantes": places_restantes,
+                    "message": ""
+                }
+
+            return {
+                "place_dispo": False,
+                "places_restantes": 0,
+                "message": "Trajet complet"
+            }
+
+    return {
+        "place_dispo": False,
+        "places_restantes": 0,
+        "message": "Trajet introuvable"
+    }
     pass
 
 
@@ -267,6 +308,15 @@ def filtrer_reservations_par_statut(reservations, statut):
         -> [{"id": 1, "statut": "effectue"}, {"id": 3, "statut": "effectue"}]
     """
     # TODO : à compléter
+    resultat = []
+
+    for reservation in reservations:
+
+        if reservation["statut"] == statut:
+
+            resultat.append(reservation)
+
+    return resultat
     pass
 
 
@@ -294,6 +344,15 @@ def historique_reservations_passager(passager_tel, reservations):
         -> [{"id": 1, "passager_tel": "067111222"}, {"id": 3, "passager_tel": "067111222"}]
     """
     # TODO : à compléter
+    resultat = []
+
+    for reservation in reservations:
+
+        if reservation["passager_tel"] == passager_tel:
+
+            resultat.append(reservation)
+
+    return resultat
     pass
 
 
@@ -321,6 +380,21 @@ def calculer_taux_annulation(reservations):
         (1 annulée sur 3 réservations, soit 33.33...%, arrondi à 33.3)
     """
     # TODO : à compléter
+    if len(reservations) == 0:
+        return 0.0
+
+    annulations = 0
+
+    for reservation in reservations:
+
+        if reservation["statut"] == "annule":
+            annulations += 1
+
+    total = len(reservations)
+
+    taux = (annulations / total) * 100
+
+    return round(taux, 1)
     pass
 
 
@@ -516,6 +590,12 @@ def verifier_telephone_disponible(comptes, telephone):
         verifier_telephone_disponible(comptes, "055999999") -> True
     """
     # TODO : à compléter
+    for compte in comptes:
+
+        if compte["telephone"] == telephone:
+            return False
+
+    return True
     pass
 
 
