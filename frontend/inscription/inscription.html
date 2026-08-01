@@ -22,17 +22,20 @@
          *** NE PAS MODIFIER les id ci-dessous — main.js les utilise ***
          ===================================================================== -->
       <section class="presentation">
-        <section class="prensentation-container">
-          <p class="text easycar">EasyCar</p>
-          <p class="text slogan">Le Co-voiturage au cœur de Brazzaville.</p>
+        <section class="presentation-container">
+          <p class="h1 easycar">EasyCar</p>
+          <p class="h1 slogan">Le Co-voiturage au cœur de Brazzaville.</p>
           <p class="text description">Rejoignez la communauté de co-voiturage easycar. De Bacongo à Kintélé, déplacez-vous avec élégance, sécurité et confort.</p>
         </section>
       </section>
        
       <section class="section-form">
-        <h1 class="h1">Créer un Compte</h1>
-        <p class="text">Prêt pour votre prochain trajet ? Remplissez les informations ci-dessous.</p>
-        <form id="form-inscription">
+        <section class="en-tete-form">
+          <h1 class="h1 titre-page">Créer un Compte</h1>
+          <p class="text">Prêt pour votre prochain trajet ? Remplissez les informations ci-dessous.</p>
+        </section>
+
+        <form class="form-inscription" id="form-inscription">
           <label class="text label" for="i-nom">Nom complet</label>
           <input class="input" type="text" id="i-nom" placeholder="Jean-Pierre MABIALA"/>
 
@@ -40,9 +43,9 @@
           <input class="input" type="tel" id="i-telephone" placeholder="066123456" />
 
           <label class="text label" for="i-mot-de-passe">Mot de passe</label>
-          <input class="input" type="password" id="i-mot-de-passe" />
+          <input class="input" type="password" id="i-mot-de-passe" placeholder="********"/>
 
-          <button class="btn btn-size" type="submit">Créer mon compte</button>
+          <button class="btn btn-form" type="submit">Créer mon compte</button>
         </form>
 
         <!-- Zone d'erreurs de validation — TODO (Dev FS7) : mettre en forme la
@@ -52,7 +55,7 @@
 
         <!-- LIEN VERS LOGIN — TODO (Dev FS7) : lien "Déjà un compte ? Se connecter"
            pointant vers ../login/login.html -->
-        <p class="text">Déjà un compte ? <a class="link link-login" href="../login/login.html">Se connecter</a></p>
+        <p class="text center">Déjà un compte ? <a class="link link-login" href="../login/login.html">Se connecter</a></p>
       </section>
     </main>
 
