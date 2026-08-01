@@ -218,3 +218,83 @@
 /* Laptop-L ou Desktop */
 @media only screen and (min-width: 1440px) {
 }
+
+body{
+    
+    background-image: url('unnamed.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat:repeat;
+    background-attachment: fixed;
+    display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+}
+/* ==========================================
+   FORMULAIRE (Responsive)
+   ========================================== */
+
+/* ==========================================
+   TABLEAU DE BORD (PLUS LARGE QUE LONG)
+   ========================================== */
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Crée 2 colonnes de même largeur */
+  gap: 16px;                     /* Espace entre les cases */
+  padding: 32px;
+  width: 100%;
+  max-width: 750px;              /* Augmente la largeur du tableau de bord */
+  background-color: var(--blanc);
+  border-radius: 12px;
+  border: 1px solid var(--gris);
+  box-shadow: 0 10px 30px;
+  margin: 20px auto;
+}
+
+#form-proposer button[type="submit"],
+#form-proposer .champ-pleine-largeur {
+  grid-column: span 2;
+}
+
+#form-proposer select,
+#form-proposer input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid #ced4da;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  background-color: #fff;
+}
+
+#form-proposer button[type="submit"] {
+  margin-top: 10px;
+  padding: 14px;
+  background-color: var(--vert);
+  color: var(--blanc);
+  font-size: 1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+#form-proposer button:hover {
+  background-color: var(--vert-fonce);
+}
+
+/* Adaptabilité pour écran mobile : on repasse sur 1 seule colonne */
+@media only screen and (max-width: 600px) {
+  form {
+    grid-template-columns: 1fr; /* Une seule colonne sur petit écran */
+  }
+  
+  #form-proposer button[type="submit"] {
+    grid-column: span 1;
+  }
+}
