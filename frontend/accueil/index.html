@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BraCovoit — Accueil</title>
+  <title>EasyCar — Accueil</title>
   <link rel="stylesheet" href="accueil.css">
 </head>
 <body id="page-accueil">
+  
 
   <!-- =====================================================================
        NAVIGATION — TODO (Dev FS1)
@@ -17,7 +18,30 @@
        ===================================================================== -->
 
   <!-- NE PAS MODIFIER l'id — main.js y affiche l'état de connexion -->
-  <div id="nav-session"></div>
+   <header>
+    <span id="logo">EasyCar</span>
+    
+    <!-- <div class="nav-wrapper"> -->
+      <nav class="navigation">
+      <a href="../accueil/index.html"></a>
+      <a href="../mes-trajets/mes-trajets.html">Mes trajets</a>
+      <a href="../proposer/proposer.html">Proposer un trajet</a>
+      <a href="../recherche/recherche.html">Recherche</a>
+      <a href="../trajet/trajet.html">Mes trajets</a>
+      <a href="../dashboard/dashboard.html">Tableau de bord</a>
+      <a href="../confirmation/confirmation.html">Confirmation</a>
+    </nav>
+  
+    <div id="nav-session" > </div>
+     <!-- </div> -->
+
+    <button class="burger" aria-label="Menu de navigation" id="burger">   
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+  
 
   <main>
     <!-- =====================================================================
@@ -26,7 +50,15 @@
          principe (mise en relation conducteurs/passagers à Brazzaville),
          bouton d'appel à l'action vers la page Recherche.
          ===================================================================== -->
-
+    <section class="hero">
+      <div class="badges">
+        <div class="badge-vert"> 📍 Brazzaville - Congo  <img src="https://i.pinimg.com/736x/48/81/40/4881400fb462290d5148f34b6241af7b.jpg" alt="" srcset=""> </div>
+        <h1 class="h1" >EasyCar, votre App <br>
+        Pour vous déplacer a <br>  
+      <span> brazzaville</span> </h1>
+      <p>Rejoignez la communauté EasyCar et voyagez facilement à Brazzaville.</p>
+      </div>
+    </section>
     <!-- =====================================================================
          CARTES INDICATEURS — TODO (Dev FS1)
          Construire 4 cartes affichant les indicateurs clés du service.
@@ -36,7 +68,7 @@
          *** NE PAS MODIFIER les id ci-dessous — main.js les utilise pour
          injecter les valeurs calculées par le backend ***
          ===================================================================== -->
-    <section>
+    <section class="cartes-indicateurs">
       <div class="carte-indicateur">
         <p class="label">Trajets aujourd'hui</p>
         <p id="nb-trajets-aujourdhui" class="valeur"></p>
@@ -62,11 +94,71 @@
          ligne sur desktop, empilé sur mobile.
          ===================================================================== -->
 
+    <section class="commentMarche">
+      <h2>Comment ça marche ?</h2>
+      <p id="description-comment-marche">EasyCar est une application de covoiturage qui met en relation les conducteurs et les passagers à Brazzaville. <br> Suivez ces étapes simples pour profiter de nos services :</p>
+
+      <div class="flex-container">
+      
+          <div class="etape">
+            <img src="https://res.cloudinary.com/wciaqqgg/image/upload/f_auto,q_auto/close_up_of_a_hand_of_an_african_passenger_holding_a_smartphone_showing_a_5_obtiqk">
+            <span> Rechercher un trajet</span>
+            <p>Entrez votre quartier de départ et d'arrivée
+              et votre destination pour trouver un trajet disponible
+            </p>
+          </div>
+          <div class="etape">
+            <img src="https://res.cloudinary.com/wciaqqgg/image/upload/f_auto,q_auto/a_stylish_african_woman_in_brazzaville_sitting_in_a_modern_cafe_happily_n5v5vn" alt="Réserver une place">
+            <span> Réserver une place</span>
+            <p>Choisissez le trajet qui vous convient et réservez votre place instantanément</p>
+          </div>
+          <div class="etape">
+            <img src="https://res.cloudinary.com/wciaqqgg/image/upload/f_auto,q_auto/p7jyxd6nniy25koyztjq" alt="Rejoindre le conducteur">
+           <span> Rejoindre le conducteur</span>
+            <p>Rencontrez  le conducteur et profitez et profitez de votre trajet en sécurité</p>
+            
+        
+        </div> 
+         
+      </div>
+      <div class="pret">
+       <h2>Prêt à voyager avec EasyCar ?</h2>
+          <a href="../recherche/recherche.html" class="btn">Rechercher un trajet</a>
+        </div>
+    </section>
     <!-- =====================================================================
          POURQUOI BRACOVOIT — TODO (Dev FS1)
          3 arguments clés (économique, écologique, communautaire par
          exemple). Layout en grille de cartes.
          ===================================================================== -->
+    <section class="grid-pourquoi">
+    <h2>Pourquoi EasyCar ?</h2>
+      <p id="description-Pourquoi-EasyCar">
+        Une solution économique, écologique et communautaire pour vos déplacements à Brazzaville.  Rejoignez notre communauté et profitez d'une expérience de covoiturage unique.
+      </p>
+      <div class="grid-container">
+      
+          <div class="grid-item1">
+            <img src="https://res.cloudinary.com/wciaqqgg/image/upload/f_auto,q_auto/screen_opjir8">
+            <span> Rechercher un trajet</span>
+            <p>Entrez votre quartier de départ et d'arrivée
+              et votre destination pour trouver un trajet disponible
+            </p>
+          </div>
+          <div class="grid-item2">
+            <img src="https://res.cloudinary.com/wciaqqgg/image/upload/f_auto,q_auto/screen_opjir8" alt="Réserver une place">
+            <span> Réserver une place</span>
+            <p>Choisissez le trajet qui vous convient et réservez votre place instantanément</p>
+          </div>
+          <div class="grid-item3">
+            <img src="https://res.cloudinary.com/wciaqqgg/image/upload/f_auto,q_auto/screen_opjir8" alt="Rejoindre le conducteur">
+           <span> Rejoindre le conducteur</span>
+            <p>Rencontrez le conducteur et profitez et profitez de votre trajet en sécurité</p>
+            
+        
+        </div> 
+
+    </section>
   </main>
 
   <!-- FOOTER — TODO (Dev FS1) : liens utiles, mentions -->
@@ -76,5 +168,6 @@
   <!-- NE PAS MODIFIER — scripts de connexion au backend -->
   <script src="../functions.js"></script>
   <script src="../main.js"></script>
+  <script src="../script.js"></script>
 </body>
 </html>

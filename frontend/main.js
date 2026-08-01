@@ -413,3 +413,6 @@ function showError(msg) {
         console.error("Erreur:", msg);
     }
 }
+
+
+

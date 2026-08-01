@@ -27,6 +27,13 @@ function compterTrajetsAujourdhui(trajets, dateAujourdhui) {
      * Exemple : compterTrajetsAujourdhui([{date:"2026-07-27"},{date:"2026-07-28"}], "2026-07-27") → 1
      */
     // TODO
+    for (let trajet of trajets){
+       let compteur=0;
+    if (trajet.date === dateAujourdhui){
+        compteur= compteur + 1;
+    }
+    return compteur;
+}
 }
 
 function formaterQuartierPrincipal(compteParQuartier) {
@@ -37,6 +44,18 @@ function formaterQuartierPrincipal(compteParQuartier) {
      * Si l'objet est vide, retourne "Aucun trajet".
      */
     // TODO
+if (Object.keys(compteParQuartier).length === 0){
+    return "Aucun trajets "
+}
+let meilleur ="";
+let Maximum=0;
+        for(let quartier in compteParQuartier){
+            if(compteParQuartier[quartier] > Maximum){
+                Maximum = compteParQuartier[quartier];
+                meilleur = quartier;
+            }
+        }
+    return meilleur + " (" + Maximum + " trajets)";
 }
 
 // ============================================================================
@@ -52,6 +71,17 @@ function filtrerParQuartierDepart(trajets, quartier) {
      * Si quartier est vide ou null, retourne tous les trajets.
      */
     // TODO
+
+    if(!quartier){
+        return trajets;
+    }
+let resultat = [];
+    for( let trajet of trajets){
+        if(trajet.quartier_depart === quartier){
+            resultat.push(trajet)
+        }
+    }
+    return resultat;
 }
 
 function rechercherParMotCle(trajets, motCle) {
@@ -64,6 +94,24 @@ function rechercherParMotCle(trajets, motCle) {
      * Si motCle est vide, retourne tous les trajets.
      */
     // TODO
+
+    if(!motCle){
+        return trajets
+    }
+
+    let resultat = [];
+
+    for(let trajet of trajets){
+        let depart = trajet.quartierDepart;
+        let arrivé = trajet.quartierArrivee;
+        let commentaire = trajet.commentaire;
+
+        if(depart.includes(motCle) || arrivé.includes(motCle) || commentaire.includes(motCle)){
+            resultat.push(trajet);
+        }
+    }
+
+    return resultat;
 }
 
 // ============================================================================
