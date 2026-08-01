@@ -175,9 +175,12 @@
 }
 
 /* Debut de la page inscription */
+.nav-session {
+  display: none;
+}
 
 .main {
-  padding: 0 var(--spacing-md);
+  padding: var(--spacing-xl) var(--spacing-md);
 }
 
 .presentation {
