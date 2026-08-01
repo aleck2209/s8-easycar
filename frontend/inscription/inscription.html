@@ -1,20 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BraCovoit — Inscription</title>
-  <link rel="stylesheet" href="inscription.css">
-</head>
-<body id="page-inscription">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BraCovoit — Inscription</title>
+    <link rel="stylesheet" href="inscription.css" />
+  </head>
+  <body id="page-inscription">
+    <!-- NAVIGATION — TODO (Dev FS7) -->
 
-  <!-- NAVIGATION — TODO (Dev FS7) -->
+    <!-- NE PAS MODIFIER l'id — main.js y affiche l'état de connexion -->
+    <div id="nav-session"></div>
 
-  <!-- NE PAS MODIFIER l'id — main.js y affiche l'état de connexion -->
-  <div id="nav-session"></div>
-
-  <main>
-    <!-- =====================================================================
+    <main class="main">
+      <!-- =====================================================================
          FORMULAIRE — TODO (Dev FS7)
          Mettre en forme le formulaire d'inscription : nom, téléphone,
          mot de passe. Prévoir un layout clair en colonne, avec des labels
@@ -22,31 +21,44 @@
 
          *** NE PAS MODIFIER les id ci-dessous — main.js les utilise ***
          ===================================================================== -->
-    <form id="form-inscription">
-      <label for="i-nom">Nom</label>
-      <input type="text" id="i-nom">
+      <section class="presentation">
+        <section class="prensentation-container">
+          <p class="text easycar">EasyCar</p>
+          <p class="text slogan">Le Co-voiturage au cœur de Brazzaville.</p>
+          <p class="text description">Rejoignez la communauté de co-voiturage easycar. De Bacongo à Kintélé, déplacez-vous avec élégance, sécurité et confort.</p>
+        </section>
+      </section>
+       
+      <section class="section-form">
+        <h1 class="h1">Créer un Compte</h1>
+        <p class="text">Prêt pour votre prochain trajet ? Remplissez les informations ci-dessous.</p>
+        <form id="form-inscription">
+          <label class="text label" for="i-nom">Nom complet</label>
+          <input class="input" type="text" id="i-nom" placeholder="Jean-Pierre MABIALA"/>
 
-      <label for="i-telephone">Téléphone</label>
-      <input type="tel" id="i-telephone" placeholder="066123456">
+          <label class="text label" for="i-telephone">Téléphone</label>
+          <input class="input" type="tel" id="i-telephone" placeholder="066123456" />
 
-      <label for="i-mot-de-passe">Mot de passe</label>
-      <input type="password" id="i-mot-de-passe">
+          <label class="text label" for="i-mot-de-passe">Mot de passe</label>
+          <input class="input" type="password" id="i-mot-de-passe" />
 
-      <button type="submit">Créer mon compte</button>
-    </form>
+          <button class="btn btn-size" type="submit">Créer mon compte</button>
+        </form>
 
-    <!-- Zone d'erreurs de validation — TODO (Dev FS7) : mettre en forme la
-         liste <ul><li> injectée par main.js en cas de formulaire invalide.
-         NE PAS MODIFIER l'id. -->
-    <div id="erreurs-form" hidden></div>
+        <!-- Zone d'erreurs de validation — TODO (Dev FS7) : mettre en forme la
+           liste <ul><li> injectée par main.js en cas de formulaire invalide.
+           NE PAS MODIFIER l'id. -->
+        <div class="erreurs-form" id="erreurs-form" hidden></div>
 
-    <!-- LIEN VERS LOGIN — TODO (Dev FS7) : lien "Déjà un compte ? Se connecter"
-         pointant vers ../login/login.html -->
-  </main>
+        <!-- LIEN VERS LOGIN — TODO (Dev FS7) : lien "Déjà un compte ? Se connecter"
+           pointant vers ../login/login.html -->
+        <p class="text">Déjà un compte ? <a class="link link-login" href="../login/login.html">Se connecter</a></p>
+      </section>
+    </main>
 
-  <div id="erreur-globale" hidden></div>
+    <div id="erreur-globale" hidden></div>
 
-  <script src="../functions.js"></script>
-  <script src="../main.js"></script>
-</body>
+    <script src="../functions.js"></script>
+    <script src="../main.js"></script>
+  </body>
 </html>
