@@ -131,7 +131,15 @@ function filtrerReservationsParStatut(reservations, statut) {
      * @param {string} statut - "effectue", "en_attente", "annule" ou "" pour toutes
      * @return {Array} - réservations correspondantes
      */
-    // TODO
+    if (!Array.isArray(reservations)) {
+        return [];
+    }
+
+    if (!statut) {
+        return reservations;
+    }
+
+    return reservations.filter((reservation) => reservation && reservation.statut === statut);
 }
 
 function calculerTotalDepenseParPassager(reservations) {
@@ -144,7 +152,21 @@ function calculerTotalDepenseParPassager(reservations) {
      *   3 réservations : 500 (effectue), 700 (en_attente), 400 (annule)
      *   → 1200
      */
-    // TODO
+    if (!Array.isArray(reservations)) {
+        return 0;
+    }
+
+    return reservations.reduce((total, reservation) => {
+        if (!reservation || reservation.statut === "annule") {
+            return total;
+        }
+
+        const prix = reservation.trajet && typeof reservation.trajet.prix_place === "number"
+            ? reservation.trajet.prix_place
+            : 0;
+
+        return total + prix;
+    }, 0);
 }
 
 // ============================================================================
