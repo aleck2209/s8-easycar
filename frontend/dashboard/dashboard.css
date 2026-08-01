@@ -15,7 +15,6 @@
   /* Colors */
   --bleu: #b4d6ff;
   --rouge: #ff3647;
-  --orange:#FF7E36;
   --vert: #00a572;
   --vert-fonce: #006c49;
   --blanc: #ffffff;
@@ -94,7 +93,7 @@
   font-weight: var(--font-bold);
   color: var(--black);
   margin-bottom: var(--spacing-sm);
-  width: 100%;
+main
 }
 
 .h3 {
@@ -168,6 +167,7 @@
   text-decoration: none;
   transition: background-color 0.4s;
 }
+
 a{
   font-family: var(--font-btn-lien);
   font-size: var(--font-sm);
@@ -183,10 +183,12 @@ a{
 
 }
 a:hover,
+ main
 .btn:hover,
 .btn-link:hover {
   background-color: var(--vert);
 }
+
 body{
   padding: 20px;
   background-color:var(--gris);
@@ -437,6 +439,7 @@ td::before{
     font-size: var(--font-base);
   }
 
+
 .grille-indicateurs{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -589,14 +592,17 @@ tbody tr:hover{
 }
 
 
+
 }
 
 /* Laptop */
 @media only screen and (min-width: 1024px) {
+
   body{
     margin: 0;
     padding: 10px;
   }
+
   /* Titre */
   .h1 {
     font-size: var(--font-3xl);
@@ -615,9 +621,6 @@ tbody tr:hover{
   .btn-link {
     font-size: var(--font-base);
   }
-/* ===========================
-   DASHBOARD DESKTOP
-=========================== */
 
 .grille-indicateurs{
     display:grid;
@@ -773,6 +776,7 @@ tbody tr:hover{
 
 /* Laptop-L ou Desktop */
 @media only screen and (min-width: 1440px) {
+
 .grille-indicateurs{
  display: grid;
  grid-template-columns: repeat(5,1fr);
@@ -955,4 +959,5 @@ tbody tr:hover{
     background:var(--vert-nuance);
 
 }
+
 }
