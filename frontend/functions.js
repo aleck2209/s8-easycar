@@ -171,14 +171,15 @@ function calculerPourcentageOccupation(placesOccupees, placesTotales) {
 
 function getBadgeDisponibilite(placesRestantes) {
     if(placesRestantes===0){
-        return {libelle:"Complet",classe:"badget'complet"};
+        return {libelle:"Complet",classe:"badge-complet"};
     }
     else if(placesRestantes===1){
-        return {libelle:"1 place",classe:"badget-limite"};
+        return {libelle:"1 place",classe:"badge-limite"};
     }
-    else{
-        return {libelle:placesRestants + "places",classe:"badget-dispo"};
+    else  {
+        return {libelle: `${placesRestantes} places`,classe:"badge-dispo"};
     }
+    
     /**
      * Retourne le libellé et la classe CSS d'un badge de disponibilité.
      * @param {number} placesRestantes - nombre de places restantes

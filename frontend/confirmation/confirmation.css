@@ -1,3 +1,4 @@
+
 :root{
     /*Palette de couleur */
     --bleu-doux:#B4D6FF;
@@ -102,4 +103,225 @@ a{
  
 }
 
+
+/* Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
+/* Initialisation */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variables */
+:root {
+  /* Colors */
+  --bleu: #b4d6ff;
+  --rouge: #ff3647;
+  --vert: #00a572;
+  --vert-fonce: #006c49;
+  --blanc: #ffffff;
+  --gris: #eeeeee;
+  --black: #0f172a;
+  --rouge-nuance: #ffbebe;
+  --vert-nuance: #beffdb;
+
+  /* Typographie */
+  /* Font-Size */
+  --font-xs: 12px;
+  --font-sm: 14px;
+  --font-base: 16px;
+  --font-lg: 20px;
+  --font-xl: 24px;
+  --font-2xl: 32px;
+  --font-3xl: 48px;
+
+  /* Font-Family */
+  --font-titre: "Plus Jakarta Sans", sans-serif;
+  --font-texte: "Outfit", sans-serif;
+  --font-btn-lien: "Inter", sans-serif;
+
+  /* Font-Weight */
+  --font-thin: 100;
+  --font-extra-light: 200;
+  --font-light: 300;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+  --font-extra-bold: 800;
+  --font-black: 900;
+
+  /* Spacing 1rem --> 16px*/
+  --spacing-none: 0;
+  --spacing-2xs: 0.25rem; /* 4px */
+  --spacing-xs: 0.5rem; /* 8px */
+  --spacing-sm: 0.75rem; /* 12px */
+  --spacing-md: 1rem; /* 16px */
+  --spacing-lg: 1.5rem; /* 24px */
+  --spacing-xl: 2rem; /* 32px */
+  --spacing-2xl: 2.5rem; /* 40px */
+  --spacing-3xl: 3rem; /* 48px */
+  --spacing-4xl: 4rem; /* 64px */
+  --spacing-5xl: 5rem; /* 80px */
+  --spacing-6xl: 6rem; /* 96px */
+  --spacing-7xl: 8rem; /* 128px */
+
+  --spacing-btn-lien: 0.6em 1em;
+  --spacing-badge: 0.5em;
+
+  /* Bordures Radius */
+  --radius-btn: 5px;
+  --radius-badge: 100px;
+
+  /* Bordures */
+  --border-card: 1px solid var(--gris);
+}
+
+/* Styles Generals  */
+
+/* Mobile */
+/* Titre */
+.h1 {
+  font-family: var(--font-titre);
+  font-size: var(--font-xl);
+  font-weight: var(--font-extra-bold);
+  color: var(--black);
+  margin-bottom: var(--spacing-sm);
+}
+
+.h2 {
+  font-family: var(--font-titre);
+  font-size: var(--font-lg);
+  font-weight: var(--font-bold);
+  color: var(--black);
+  margin-bottom: var(--spacing-sm);
+}
+
+.h3 {
+  font-family: var(--font-titre);
+  font-size: var(--font-base);
+  font-weight: var(--font-semi-bold);
+  color: var(--black);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Paragraphe: pour l'ensemble des textes hors titre, button et lien */
+.text {
+  font-family: var(--font-texte);
+  font-size: var(--font-sm);
+  font-weight: var(--font-regular);
+  color: var(--black);
+}
+
+/* Liens: style des liens de navigation */
+.link {
+  font-family: var(--font-btn-lien);
+  font-size: var(--font-sm);
+  font-weight: var(--font-medium);
+  color: var(--vert);
+  text-decoration: none;
+  transition:
+    color 0.4s,
+    transform 0.4s;
+}
+
+.link:hover {
+  color: var(--vert-fonce);
+  transform: translateY(-2px);
+}
+
+/* Badge */
+.badge-vert {
+  display: inline-block;
+  padding: var(--spacing-badge);
+  font-family: var(--font-btn-lien);
+  font-size: var(--font-xs);
+  font-weight: var(--font-medium);
+  background-color: var(--vert-nuance);
+  color: var(--vert-fonce);
+  border-radius: var(--radius-badge);
+}
+
+.badge-rouge {
+  display: inline-block;
+  padding: var(--spacing-badge);
+  font-family: var(--font-btn-lien);
+  font-size: var(--font-xs);
+  font-weight: var(--font-medium);
+  background-color: var(--rouge-nuance);
+  color: var(--rouge);
+  border-radius: var(--radius-badge);
+}
+
+/* Bouton réaliser avec input, button ou a(lien) */
+.btn,
+.btn-link {
+  font-family: var(--font-btn-lien);
+  font-size: var(--font-sm);
+  font-weight: var(--font-medium);
+  padding: var(--spacing-btn-lien);
+  background-color: var(--vert-fonce);
+  color: var(--blanc);
+  border: none;
+  border-radius: var(--radius-btn);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.4s;
+}
+
+.btn:hover,
+.btn-link:hover {
+  background-color: var(--vert);
+}
+
+/* Tablette */
+@media only screen and (min-width: 768px) {
+  /* Titre */
+  .h1 {
+    font-size: var(--font-2xl);
+  }
+
+  .h2 {
+    font-size: var(--font-xl);
+  }
+
+  .h3 {
+    font-size: var(--font-lg);
+  }
+
+  /* Paragraphe: pour l'ensemble des textes hors titre, button et lien */
+  .text {
+    font-size: var(--font-base);
+  }
+}
+
+/* Laptop */
+@media only screen and (min-width: 1024px) {
+  /* Titre */
+  .h1 {
+    font-size: var(--font-3xl);
+  }
+
+  .h2 {
+    font-size: var(--font-2xl);
+  }
+
+  /* Liens: style des liens de navigation */
+  .link {
+    font-size: var(--font-base);
+  }
+
+  .btn,
+  .btn-link {
+    font-size: var(--font-base);
+  }
+}
+
+/* Laptop-L ou Desktop */
+@media only screen and (min-width: 1440px) {
+}
 

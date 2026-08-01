@@ -22,11 +22,22 @@
          *** NE PAS MODIFIER les id ci-dessous — main.js les utilise ***
          ===================================================================== -->
     <section class="grille-indicateurs">
-      <div class="carte-indicateur"><p class="label">Trajets disponibles</p><p id="d-trajets" class="valeur"></p></div>
-      <div class="carte-indicateur"><p class="label">Conducteurs actifs</p><p id="d-conducteurs" class="valeur"></p></div>
-      <div class="carte-indicateur"><p class="label">Réservations actives</p><p id="d-reservations" class="valeur"></p></div>
-      <div class="carte-indicateur"><p class="label">Note moyenne</p><p id="d-note" class="valeur"></p></div>
-      <div class="carte-indicateur"><p class="label">Taux d'annulation</p><p id="d-taux-annulation" class="valeur"></p></div>
+      <div class="carte-indicateur vert-fonce">
+      <img src="https://cdn-icons-png.flaticon.com/128/8386/8386729.png">
+      <p class="label text">Trajets disponibles</p><p id="d-trajets " class="valeur">23</p></div>
+      <div class="carte-indicateur orange">
+        <img src="https://cdn-icons-png.flaticon.com/128/12266/12266251.png">
+      <p class="label text">Conducteurs actifs</p><p id="d-conducteurs" class="valeur"></p></div>
+      <div class="carte-indicateur bleu">
+        <img src="https://cdn-icons-png.flaticon.com/128/18018/18018681.png">
+        <p class="label text">Réservations actives</p><p id="d-reservations" class="valeur"></p></div>
+      <div class="carte-indicateur vert">
+        <img src="https://cdn-icons-png.flaticon.com/128/8560/8560955.png">
+        <p class="label text">Note moyenne</p><p id="d-note" class="valeur"></p></div>
+      <div class="carte-indicateur rouge"><p class="label text">
+        <img src="https://cdn-icons-png.flaticon.com/128/8695/8695043.png">
+
+        <p>Taux d'annulation</p><p id="d-taux-annulation" class="valeur"></p></div>
     </section>
 
     <!-- =====================================================================
@@ -37,19 +48,33 @@
 
          *** NE PAS MODIFIER l'id ***
          ===================================================================== -->
-    <section>
-      <h2>Top 3 conducteurs</h2>
-      <ol id="d-top-conducteurs"></ol>
+    
+    <div class="cartes">
+      <section class="top-conducteur">
+      <h2 class="h3">Top 3 conducteurs</h2>
+      <div  class="carte">
+      <ol id="d-top-conducteurs">
+        <li><img src="https://ui-avatars.com/api/?name=Paul+Koumba&background=random" alt="Avatar Paul Koumba">
+      </ol>
+      </div>
     </section>
 
     <!-- TRAJET VEDETTE — TODO (Dev FS6) : mettre en avant visuellement
          ce trajet (encart distinctif).
          *** NE PAS MODIFIER l'id *** -->
-    <section>
-      <h2>Trajet vedette</h2>
-      <p id="d-trajet-top"></p>
+    <section class="trajet-vedette" >
+      <h2 class="h3">Trajet vedette</h2>
+      <div class="carte trajet-top">
+      <div class="brouillard">
+           <p id="d-trajet-top">
+                <img src="https://picsum.photos/200/100" alt="Trajet aléatoire">
+                </p>
+      </div>
+   
+      </div>
     </section>
 
+</div>
     <!-- =====================================================================
          TABLEAU PAR QUARTIER — TODO (Dev FS6)
          Mettre en forme le tableau (bordures, alternance de lignes,
@@ -57,16 +82,33 @@
 
          *** NE PAS MODIFIER l'id ***
          ===================================================================== -->
-    <section>
-      <h2>Répartition par quartier de départ</h2>
+    <section class="repartition ">
+      <h2 class="h2">Répartition par quartier de départ</h2>
+      <div class="carte-empile">
       <table>
-        <thead><tr><th>Quartier</th><th>Nombre de trajets</th><th>Prix moyen</th></tr></thead>
-        <tbody id="d-trajets-par-quartier"></tbody>
+        <thead class="text"><tr><th>Quartier</th><th>Nombre de trajets</th><th>Prix moyen</th></tr></thead>
+        <tbody id="d-trajets-par-quartier">
+                 <tr>
+            <td data-label="Quartier" class="text">23</td>
+            <td data-label="Nombre de trajets" class="text">ICI</td>
+            <td data-label="Prix moyen" class="text">LUI</td>
+          </tr>
+          <tr>
+            <td data-label="Quartier" class="text">27</td>
+            <td data-label="Nombre de trajets" class="text">IC6I</td>
+            <td data-label="Prix moyen" class="text">HUI</td>
+          </tr>
+          <tr>
+            <td data-label="Quartier" class="text">29</td>
+            <td data-label="Nombre de trajets" class="text">ICILO</td>
+            <td data-label="Prix moyen" class="text">LUI</td>
+          </tr>
+        </tbody>
       </table>
+      </div>
     </section>
   </main>
-
-  <div id="erreur-globale" hidden></div>
+  <div id="erreur-globale"  class="badge-rouge" hidden ></div>
 
   <script src="../functions.js"></script>
   <script src="../main.js"></script>
