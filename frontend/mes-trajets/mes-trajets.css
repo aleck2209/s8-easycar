@@ -1,5 +1,6 @@
 /* Google Font */
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap");
 
 /* Initialisation */
 *,
@@ -12,7 +13,6 @@
 
 /* Variables */
 :root {
-  /* Colors */
   --bleu: #b4d6ff;
   --rouge: #ff3647;
   --vert: #00a572;
@@ -22,9 +22,10 @@
   --black: #0f172a;
   --rouge-nuance: #ffbebe;
   --vert-nuance: #beffdb;
+  --fond: #f7f9fc;
+  --fond-card: #ffffff;
+  --texte-secondaire: #5f6b7a;
 
-  /* Typographie */
-  /* Font-Size */
   --font-xs: 12px;
   --font-sm: 14px;
   --font-base: 16px;
@@ -33,52 +34,40 @@
   --font-2xl: 32px;
   --font-3xl: 48px;
 
-  /* Font-Family */
   --font-titre: "Plus Jakarta Sans", sans-serif;
   --font-texte: "Outfit", sans-serif;
   --font-btn-lien: "Inter", sans-serif;
 
-  /* Font-Weight */
-  --font-thin: 100;
-  --font-extra-light: 200;
-  --font-light: 300;
   --font-regular: 400;
   --font-medium: 500;
   --font-semi-bold: 600;
   --font-bold: 700;
   --font-extra-bold: 800;
-  --font-black: 900;
 
-  /* Spacing 1rem --> 16px*/
-  --spacing-none: 0;
-  --spacing-2xs: 0.25rem; /* 4px */
-  --spacing-xs: 0.5rem; /* 8px */
-  --spacing-sm: 0.75rem; /* 12px */
-  --spacing-md: 1rem; /* 16px */
-  --spacing-lg: 1.5rem; /* 24px */
-  --spacing-xl: 2rem; /* 32px */
-  --spacing-2xl: 2.5rem; /* 40px */
-  --spacing-3xl: 3rem; /* 48px */
-  --spacing-4xl: 4rem; /* 64px */
-  --spacing-5xl: 5rem; /* 80px */
-  --spacing-6xl: 6rem; /* 96px */
-  --spacing-7xl: 8rem; /* 128px */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 0.75rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 2.5rem;
+  --spacing-3xl: 3rem;
 
-  --spacing-btn-lien: 0.6em 1em;
+  --spacing-btn-lien: 0.7em 1.1em;
   --spacing-badge: 0.5em;
 
-  /* Bordures Radius */
-  --radius-btn: 5px;
-  --radius-badge: 100px;
-
-  /* Bordures */
-  --border-card: 1px solid var(--gris);
+  --radius-btn: 8px;
+  --radius-badge: 999px;
+  --radius-card: 16px;
+  --border-card: 1px solid #e9eef4;
 }
 
-/* Styles Generals  */
+/* Styles généraux */
+body {
+  font-family: var(--font-texte);
+  background: linear-gradient(180deg, var(--fond) 0%, #f0f4f8 100%);
+  color: var(--black);
+}
 
-/* Mobile */
-/* Titre */
 .h1 {
   font-family: var(--font-titre);
   font-size: var(--font-xl);
@@ -92,68 +81,32 @@
   font-size: var(--font-lg);
   font-weight: var(--font-bold);
   color: var(--black);
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-xs);
 }
 
-.h3 {
-  font-family: var(--font-titre);
-  font-size: var(--font-base);
-  font-weight: var(--font-semi-bold);
-  color: var(--black);
-  margin-bottom: var(--spacing-sm);
-}
-
-/* Paragraphe: pour l'ensemble des textes hors titre, button et lien */
 .text {
   font-family: var(--font-texte);
   font-size: var(--font-sm);
   font-weight: var(--font-regular);
-  color: var(--black);
+  color: var(--texte-secondaire);
+  line-height: 1.6;
 }
 
-/* Liens: style des liens de navigation */
 .link {
   font-family: var(--font-btn-lien);
   font-size: var(--font-sm);
   font-weight: var(--font-medium);
-  color: var(--vert);
+  color: var(--vert-fonce);
   text-decoration: none;
-  transition:
-    color 0.4s,
-    transform 0.4s;
+  transition: color 0.3s ease;
 }
 
-.link:hover {
-  color: var(--vert-fonce);
-  transform: translateY(-2px);
+.link:hover,
+.link--active {
+  color: var(--vert);
 }
 
-/* Badge */
-.badge-vert {
-  display: inline-block;
-  padding: var(--spacing-badge);
-  font-family: var(--font-btn-lien);
-  font-size: var(--font-xs);
-  font-weight: var(--font-medium);
-  background-color: var(--vert-nuance);
-  color: var(--vert-fonce);
-  border-radius: var(--radius-badge);
-}
-
-.badge-rouge {
-  display: inline-block;
-  padding: var(--spacing-badge);
-  font-family: var(--font-btn-lien);
-  font-size: var(--font-xs);
-  font-weight: var(--font-medium);
-  background-color: var(--rouge-nuance);
-  color: var(--rouge);
-  border-radius: var(--radius-badge);
-}
-
-/* Bouton réaliser avec input, button ou a(lien) */
-.btn,
-.btn-link {
+.btn {
   font-family: var(--font-btn-lien);
   font-size: var(--font-sm);
   font-weight: var(--font-medium);
@@ -164,17 +117,247 @@
   border-radius: var(--radius-btn);
   cursor: pointer;
   text-decoration: none;
-  transition: background-color 0.4s;
+  transition: background-color 0.3s ease;
 }
 
-.btn:hover,
-.btn-link:hover {
+.btn:hover {
   background-color: var(--vert);
 }
 
-/* Tablette */
+/* Header */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg) var(--spacing-xl);
+  background: rgba(255, 255, 255, 0.92);
+  border-bottom: var(--border-card);
+  backdrop-filter: blur(10px);
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.brand__logo {
+  font-family: var(--font-titre);
+  font-size: var(--font-lg);
+  font-weight: var(--font-extra-bold);
+  color: var(--vert-fonce);
+}
+
+.brand__tag {
+  font-size: var(--font-xs);
+  color: var(--texte-secondaire);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.topbar__nav {
+  display: none;
+  gap: var(--spacing-lg);
+}
+
+.nav-session {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: var(--font-sm);
+  color: var(--vert-fonce);
+}
+
+/* Contenu principal */
+.page-mes-trajets {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-xl) var(--spacing-xl) var(--spacing-3xl);
+  display: grid;
+  gap: var(--spacing-xl);
+}
+
+/* Hero */
+.hero-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  background: var(--fond-card);
+  border: var(--border-card);
+  border-radius: var(--radius-card);
+  padding: var(--spacing-xl);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+.eyebrow {
+  font-family: var(--font-btn-lien);
+  font-size: var(--font-xs);
+  font-weight: var(--font-semi-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--vert-fonce);
+  margin-bottom: var(--spacing-xs);
+}
+
+.resume-card {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  background: var(--vert-nuance);
+  border-radius: var(--radius-card);
+  padding: var(--spacing-lg);
+}
+
+.resume-card__icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  overflow: hidden;
+  border-radius: 14px;
+  background: var(--blanc);
+  color: var(--vert-fonce);
+  font-family: "Material Symbols Outlined", sans-serif;
+  font-size: 24px;
+}
+
+.resume-card__value {
+  font-family: var(--font-titre);
+  font-size: var(--font-lg);
+  font-weight: var(--font-bold);
+  color: var(--vert-fonce);
+}
+
+/* Filtres */
+.filtres-card {
+  background: var(--fond-card);
+  border: var(--border-card);
+  border-radius: var(--radius-card);
+  padding: var(--spacing-xl);
+  display: grid;
+  gap: var(--spacing-lg);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+}
+
+.filtres-card__title {
+  display: grid;
+  gap: var(--spacing-xs);
+}
+
+.barre-recherche-tel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field__label {
+  font-size: var(--font-xs);
+  font-weight: var(--font-semi-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--texte-secondaire);
+}
+
+.field input,
+.field select {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1px solid #dce5ee;
+  border-radius: var(--radius-btn);
+  font-family: var(--font-texte);
+  font-size: var(--font-base);
+  background: var(--blanc);
+}
+
+.field input:focus,
+.field select:focus {
+  outline: 2px solid var(--bleu);
+  border-color: var(--vert);
+}
+
+/* Liste des réservations */
+.liste-section {
+  display: grid;
+  gap: var(--spacing-lg);
+}
+
+.section-heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.liste-reservations {
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+.carte-reservation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  background: var(--fond-card);
+  border: var(--border-card);
+  border-radius: var(--radius-card);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+}
+
+.carte-reservation h3 {
+  font-family: var(--font-titre);
+  font-size: var(--font-base);
+  margin-bottom: var(--spacing-xs);
+  color: var(--black);
+}
+
+.carte-reservation p {
+  font-size: var(--font-sm);
+  color: var(--texte-secondaire);
+  margin-bottom: 4px;
+}
+
+.carte-reservation--placeholder {
+  opacity: 0.9;
+}
+
+.statut {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.8rem;
+  border-radius: var(--radius-badge);
+  font-family: var(--font-btn-lien);
+  font-size: var(--font-xs);
+  font-weight: var(--font-medium);
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.statut-effectue {
+  background: var(--vert-nuance);
+  color: var(--vert-fonce);
+}
+
+.statut-en_attente {
+  background: var(--bleu);
+  color: #29557a;
+}
+
+.statut-annule {
+  background: var(--rouge-nuance);
+  color: var(--rouge);
+}
+
+/* Responsive */
 @media only screen and (min-width: 768px) {
-  /* Titre */
   .h1 {
     font-size: var(--font-2xl);
   }
@@ -183,19 +366,31 @@
     font-size: var(--font-xl);
   }
 
-  .h3 {
-    font-size: var(--font-lg);
+  .topbar__nav {
+    display: flex;
   }
 
-  /* Paragraphe: pour l'ensemble des textes hors titre, button et lien */
-  .text {
-    font-size: var(--font-base);
+  .hero-card {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .barre-recherche-tel {
+    flex-direction: row;
+    align-items: end;
+  }
+
+  .field {
+    flex: 1;
+  }
+
+  .field--select {
+    max-width: 220px;
   }
 }
 
-/* Laptop */
 @media only screen and (min-width: 1024px) {
-  /* Titre */
   .h1 {
     font-size: var(--font-3xl);
   }
@@ -204,17 +399,7 @@
     font-size: var(--font-2xl);
   }
 
-  /* Liens: style des liens de navigation */
-  .link {
-    font-size: var(--font-base);
+  .page-mes-trajets {
+    padding-top: var(--spacing-3xl);
   }
-
-  .btn,
-  .btn-link {
-    font-size: var(--font-base);
-  }
-}
-
-/* Laptop-L ou Desktop */
-@media only screen and (min-width: 1440px) {
 }
