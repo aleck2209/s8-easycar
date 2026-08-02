@@ -256,7 +256,7 @@ function validerFormulaireLogin(formulaire) {
         resultat.erreurs.push('Le mot de passe est obligatoire.');
         return resultat;
     } else {
-        resusltat.valide = true;
+        resultat.valide = true;
         return resultat;
     }
 }
