@@ -4,38 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BraCovoit — Confirmation</title>
-  <link rel="stylesheet" href="confirmation.css">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/><link rel="stylesheet" href="confirmation.css">
+
 </head>
 <body id="page-confirmation">
 
   <!-- NAVIGATION — TODO (Dev FS6) -->
 
   <!-- NE PAS MODIFIER l'id — main.js y affiche l'état de connexion -->
-   <header>
-    <a href="../accueil/index.html"><span id="logo">EasyCar</span></a>
-    
-    <!-- <div class="nav-wrapper"> -->
-      <nav class="navigation">
-      <a href="../accueil/index.html"></a>
-      <a href="../mes-trajets/mes-trajets.html">Mes trajets</a>
-      <a href="../proposer/proposer.html">Proposer un trajet</a>
-      <a href="../recherche/recherche.html">Recherche</a>
-      <a href="../trajet/trajet.html">Mes trajets</a>
-      <a href="../dashboard/dashboard.html">Tableau de bord</a>
-      <a href="../confirmation/confirmation.html">Confirmation</a>
-    </nav>
-  
-    <div id="nav-session" > </div>
-     <!-- </div> -->
-
-    <button class="burger" aria-label="Menu de navigation" id="burger">   
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </header>
+  <div id="nav-session"></div>
 
   <main>
+    <div class="sous-main">
+    <div class="image">
+      <img src="https://media.istockphoto.com/id/1342235356/fr/photo/une-%C3%A9tudiante-afro-am%C3%A9ricaine-joyeuse-utilisant-un-t%C3%A9l%C3%A9phone-portable-debout-%C3%A0-lext%C3%A9rieur.jpg?s=612x612&w=0&k=20&c=nzgEmiiKEV8wSYkf3KFL2xkhjAMUP5G86yg1BekvWDo=">
+      <div class="brouillard"></div>
+    </div>
     <!-- =====================================================================
          MESSAGE DE CONFIRMATION — TODO (Dev FS6)
          Cadre visuel de succès (icône, couleur positive). Le message exact
@@ -44,82 +28,33 @@
          *** NE PAS MODIFIER l'id — main.js injecte le message ***
          ===================================================================== -->
     <section class="bloc-confirmation">
-      <h1>Merci !</h1>
-      <p id="confirmation-message"></p>
+      <img src="https://img.magnific.com/vecteurs-libre/coche-verte-double-cercle_78370-1749.jpg?semt=ais_hybrid&w=740&q=80">
+      <h1 class="h1">Votre réservation est confirmée.</h1>
+      <p id="confirmation-message" class="h3">Préparez-vous pour un trajet confortable vers votre destination.</p>
     </section>
-
+  </div>
     <!-- PROCHAINES ÉTAPES — TODO (Dev FS6) : mettre en forme ces 3 liens
          (boutons ou cartes de navigation).
          NE PAS MODIFIER les href/id des liens. -->
     <section class="prochaines-etapes">
-      <h2>Prochaines étapes</h2>
-      <a href="../accueil/index.html">Retour à l'accueil</a>
-      <a id="lien-mes-trajets" href="../mes-trajets/mes-trajets.html">Voir mes trajets</a>
-      <a href="../recherche/recherche.html">Rechercher d'autres trajets</a>
-    </section>
+      <h2 class="h2">Prochaines étapes</h2>
+      <div class="conteneur_bouton">
+      <button class="carte">
+        <span class="material-symbols-outlined">home</span>
+        <a href="../accueil/index.html"  class="btn">Retour à l'accueil</a></button>
+      <button class="carte ">  
+        <span class="material-symbols-outlined icon-blanche">directions_car</span>
+        <a id="lien-mes-trajets" href="../mes-trajets/mes-trajets.html" class="btn">Voir mes trajets</a></button>
+      <button class="carte">
+        <span class="material-symbols-outlined">pin_road_2</span>
+        <a href="../recherche/recherche.html"  class="btn">Autres trajets</a>
+      </button>
+    </div>
+    </section>   
+
   </main>
-  <footer class="footer">
-
-    <div class="footer-container">
-
-        <div class="footer-logo">
-            <h2>EasyCar</h2>
-            <p>
-                La plateforme de covoiturage qui facilite vos déplacements
-                entre les quartiers de Brazzaville.
-            </p>
-        </div>
-
-        <div class="footer-liens">
-            <h3>Navigation</h3>
-
-            <a href="../index.html">Accueil</a>
-            <a href="../recherche/recherche.html">Recherche</a>
-            <a href="../proposer/proposer.html">Proposer un trajet</a>
-            <a href="../mes-trajets/mes-trajets.html">Mes trajets</a>
-            <a href="../dashboard/dashboard.html">Tableau de bord</a>
-
-        </div>
-
-        <div class="footer-compte">
-            <h3>Compte</h3>
-
-            <a href="../inscription/inscription.html">Inscription</a>
-            <a href="../connexion/connexion.html">Connexion</a>
-
-        </div>
-
-        <div class="footer-contact">
-
-            <h3>Contact</h3>
-
-            <p> Brazzaville, Congo</p>
-
-            <p>Conacte@easycar.com</p>
-
-            <p> +242 06 957 94 03</p>
-
-        </div>
-
-    </div>
-
-    <div class="footer-bottom">
-
-        <p>
-            © 2026 EasyCar. Tous droits réservés.
-        </p>
-
-        <p>
-            Projet pédagogique développé dans le cadre de la formation
-            Akieni Academy.
-        </p>
-
-    </div>
-
-</footer>
 
   <script src="../functions.js"></script>
   <script src="../main.js"></script>
-   <script src="../script.js"></script>
 </body>
 </html>
