@@ -1,6 +1,5 @@
 /* Google Font */
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap");
 
 /* Initialisation */
 *,
@@ -13,6 +12,7 @@
 
 /* Variables */
 :root {
+  /* Colors */
   --bleu: #b4d6ff;
   --rouge: #ff3647;
   --vert: #00a572;
@@ -22,10 +22,9 @@
   --black: #0f172a;
   --rouge-nuance: #ffbebe;
   --vert-nuance: #beffdb;
-  --fond: #f7f9fc;
-  --fond-card: #ffffff;
-  --texte-secondaire: #5f6b7a;
 
+  /* Typographie */
+  /* Font-Size */
   --font-xs: 12px;
   --font-sm: 14px;
   --font-base: 16px;
@@ -34,40 +33,52 @@
   --font-2xl: 32px;
   --font-3xl: 48px;
 
+  /* Font-Family */
   --font-titre: "Plus Jakarta Sans", sans-serif;
   --font-texte: "Outfit", sans-serif;
   --font-btn-lien: "Inter", sans-serif;
 
+  /* Font-Weight */
+  --font-thin: 100;
+  --font-extra-light: 200;
+  --font-light: 300;
   --font-regular: 400;
   --font-medium: 500;
   --font-semi-bold: 600;
   --font-bold: 700;
   --font-extra-bold: 800;
+  --font-black: 900;
 
-  --spacing-xs: 0.5rem;
-  --spacing-sm: 0.75rem;
-  --spacing-md: 1rem;
-  --spacing-lg: 1.5rem;
-  --spacing-xl: 2rem;
-  --spacing-2xl: 2.5rem;
-  --spacing-3xl: 3rem;
+  /* Spacing 1rem --> 16px*/
+  --spacing-none: 0;
+  --spacing-2xs: 0.25rem; /* 4px */
+  --spacing-xs: 0.5rem; /* 8px */
+  --spacing-sm: 0.75rem; /* 12px */
+  --spacing-md: 1rem; /* 16px */
+  --spacing-lg: 1.5rem; /* 24px */
+  --spacing-xl: 2rem; /* 32px */
+  --spacing-2xl: 2.5rem; /* 40px */
+  --spacing-3xl: 3rem; /* 48px */
+  --spacing-4xl: 4rem; /* 64px */
+  --spacing-5xl: 5rem; /* 80px */
+  --spacing-6xl: 6rem; /* 96px */
+  --spacing-7xl: 8rem; /* 128px */
 
-  --spacing-btn-lien: 0.7em 1.1em;
+  --spacing-btn-lien: 0.6em 1em;
   --spacing-badge: 0.5em;
 
-  --radius-btn: 8px;
-  --radius-badge: 999px;
-  --radius-card: 16px;
-  --border-card: 1px solid #e9eef4;
+  /* Bordures Radius */
+  --radius-btn: 5px;
+  --radius-badge: 100px;
+
+  /* Bordures */
+  --border-card: 1px solid var(--gris);
 }
 
-/* Styles généraux */
-body {
-  font-family: var(--font-texte);
-  background: linear-gradient(180deg, var(--fond) 0%, #f0f4f8 100%);
-  color: var(--black);
-}
+/* Styles Generals  */
 
+/* Mobile */
+/* Titre */
 .h1 {
   font-family: var(--font-titre);
   font-size: var(--font-xl);
@@ -81,32 +92,68 @@ body {
   font-size: var(--font-lg);
   font-weight: var(--font-bold);
   color: var(--black);
-  margin-bottom: var(--spacing-xs);
+  margin-bottom: var(--spacing-sm);
 }
 
+.h3 {
+  font-family: var(--font-titre);
+  font-size: var(--font-base);
+  font-weight: var(--font-semi-bold);
+  color: var(--black);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Paragraphe: pour l'ensemble des textes hors titre, button et lien */
 .text {
   font-family: var(--font-texte);
   font-size: var(--font-sm);
   font-weight: var(--font-regular);
-  color: var(--texte-secondaire);
-  line-height: 1.6;
+  color: var(--black);
 }
 
+/* Liens: style des liens de navigation */
 .link {
   font-family: var(--font-btn-lien);
   font-size: var(--font-sm);
   font-weight: var(--font-medium);
-  color: var(--vert-fonce);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.link:hover,
-.link--active {
   color: var(--vert);
+  text-decoration: none;
+  transition:
+    color 0.4s,
+    transform 0.4s;
 }
 
-.btn {
+.link:hover {
+  color: var(--vert-fonce);
+  transform: translateY(-2px);
+}
+
+/* Badge */
+.badge-vert {
+  display: inline-block;
+  padding: var(--spacing-badge);
+  font-family: var(--font-btn-lien);
+  font-size: var(--font-xs);
+  font-weight: var(--font-medium);
+  background-color: var(--vert-nuance);
+  color: var(--vert-fonce);
+  border-radius: var(--radius-badge);
+}
+
+.badge-rouge {
+  display: inline-block;
+  padding: var(--spacing-badge);
+  font-family: var(--font-btn-lien);
+  font-size: var(--font-xs);
+  font-weight: var(--font-medium);
+  background-color: var(--rouge-nuance);
+  color: var(--rouge);
+  border-radius: var(--radius-badge);
+}
+
+/* Bouton réaliser avec input, button ou a(lien) */
+.btn,
+.btn-link {
   font-family: var(--font-btn-lien);
   font-size: var(--font-sm);
   font-weight: var(--font-medium);
@@ -117,132 +164,87 @@ body {
   border-radius: var(--radius-btn);
   cursor: pointer;
   text-decoration: none;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.4s;
 }
 
-.btn:hover {
+.btn:hover,
+.btn-link:hover {
   background-color: var(--vert);
 }
 
-/* Header */
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: var(--spacing-md);
-  padding: var(--spacing-lg) var(--spacing-xl);
-  background: rgba(255, 255, 255, 0.92);
-  border-bottom: var(--border-card);
-  backdrop-filter: blur(10px);
+/* Tablette */
+@media only screen and (min-width: 768px) {
+  /* Titre */
+  .h1 {
+    font-size: var(--font-2xl);
+  }
+
+  .h2 {
+    font-size: var(--font-xl);
+  }
+
+  .h3 {
+    font-size: var(--font-lg);
+  }
+
+  /* Paragraphe: pour l'ensemble des textes hors titre, button et lien */
+  .text {
+    font-size: var(--font-base);
+  }
 }
 
-.brand {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
+/* Laptop */
+@media only screen and (min-width: 1024px) {
+  /* Titre */
+  .h1 {
+    font-size: var(--font-3xl);
+  }
+
+  .h2 {
+    font-size: var(--font-2xl);
+  }
+
+  /* Liens: style des liens de navigation */
+  .link {
+    font-size: var(--font-base);
+  }
+
+  .btn,
+  .btn-link {
+    font-size: var(--font-base);
+  }
 }
 
-.brand__logo {
-  font-family: var(--font-titre);
-  font-size: var(--font-lg);
-  font-weight: var(--font-extra-bold);
-  color: var(--vert-fonce);
+/* Laptop-L ou Desktop */
+@media only screen and (min-width: 1440px) {
 }
 
-.brand__tag {
-  font-size: var(--font-xs);
-  color: var(--texte-secondaire);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+/* Page Mes trajets */
+#page-mes-trajets {
+  background-color: linear-gradient(180deg, var(--fond) 0%, #f0f4f8 100%);
+  min-height: 100vh;
+  padding: var(--spacing-lg) var(--spacing-md) var(--spacing-5xl);
 }
 
-.topbar__nav {
-  display: none;
-  gap: var(--spacing-lg);
-}
-
-.nav-session {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-xs);
-  font-size: var(--font-sm);
-  color: var(--vert-fonce);
-}
-
-/* Contenu principal */
 .page-mes-trajets {
   max-width: 1200px;
   margin: 0 auto;
-  padding: var(--spacing-xl) var(--spacing-xl) var(--spacing-3xl);
-  display: grid;
-  gap: var(--spacing-xl);
-}
-
-/* Hero */
-.hero-card {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-lg);
-  background: var(--fond-card);
-  border: var(--border-card);
-  border-radius: var(--radius-card);
-  padding: var(--spacing-xl);
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+  gap: var(--spacing-4xl);
 }
 
-.eyebrow {
-  font-family: var(--font-btn-lien);
-  font-size: var(--font-xs);
-  font-weight: var(--font-semi-bold);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--vert-fonce);
-  margin-bottom: var(--spacing-xs);
-}
-
-.resume-card {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-md);
-  background: var(--vert-nuance);
-  border-radius: var(--radius-card);
-  padding: var(--spacing-lg);
-}
-
-.resume-card__icon {
-  display: grid;
-  place-items: center;
-  width: 48px;
-  height: 48px;
-  overflow: hidden;
-  border-radius: 14px;
-  background: var(--blanc);
-  color: var(--vert-fonce);
-  font-family: "Material Symbols Outlined", sans-serif;
-  font-size: 24px;
-}
-
-.resume-card__value {
-  font-family: var(--font-titre);
-  font-size: var(--font-lg);
-  font-weight: var(--font-bold);
-  color: var(--vert-fonce);
-}
-
-/* Filtres */
+/* Section de recherche et de filtres */
 .filtres-card {
-  background: var(--fond-card);
+  background-color: var(--blanc);
   border: var(--border-card);
-  border-radius: var(--radius-card);
-  padding: var(--spacing-xl);
-  display: grid;
-  gap: var(--spacing-lg);
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+  border-radius: 24px;
+  padding: var(--spacing-4xl);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.04);
 }
 
 .filtres-card__title {
-  display: grid;
-  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-lg);
 }
 
 .barre-recherche-tel {
@@ -254,120 +256,171 @@ body {
 .field {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 0.5rem;
+  width: 100%;
 }
 
 .field__label {
-  font-size: var(--font-xs);
-  font-weight: var(--font-semi-bold);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--texte-secondaire);
+  font-family: var(--font-texte);
+  font-size: var(--font-sm);
+  color: var(--black);
 }
 
 .field input,
 .field select {
   width: 100%;
-  padding: 0.9rem 1rem;
-  border: 1px solid #dce5ee;
-  border-radius: var(--radius-btn);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid #d8dde5;
+  border-radius: 16px;
+  background-color: #fcfdff;
   font-family: var(--font-texte);
   font-size: var(--font-base);
-  background: var(--blanc);
+  color: var(--black);
 }
 
 .field input:focus,
 .field select:focus {
-  outline: 2px solid var(--bleu);
-  border-color: var(--vert);
+  outline: none;
+  border-color: var(--vert-fonce);
+  box-shadow: 0 0 0 3px rgba(0, 165, 114, 0.12);
+}
+
+.barre-recherche-tel .btn {
+  min-width: 180px;
+}
+
+/* Bandeau de résumé des dépenses */
+.hero-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  background-color: var(--blanc);
+  border: var(--border-card);
+  border-radius: 24px;
+  padding: var(--spacing-4xl);
+  align-items: stretch;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.04);
+}
+
+.resume-card {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  border-radius: 20px;
+  background-color: #e6fff1;
+  border: 1px solid rgba(0, 165, 114, 0.15);
+}
+
+.resume-card__icon {
+  width: 3rem;
+  height: 3rem;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background-color: var(--vert);
+  color: var(--blanc);
+  font-size: 1.25rem;
+}
+
+.resume-card p {
+  margin: 0;
 }
 
 /* Liste des réservations */
 .liste-section {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: var(--spacing-lg);
 }
 
-.section-heading {
+.liste-reservations {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-xs);
-}
-
-.liste-reservations {
-  display: grid;
-  gap: var(--spacing-md);
+  gap: var(--spacing-lg);
 }
 
 .carte-reservation {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
   gap: var(--spacing-lg);
-  padding: var(--spacing-lg);
-  background: var(--fond-card);
+  background-color: var(--blanc);
   border: var(--border-card);
-  border-radius: var(--radius-card);
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+  border-radius: 24px;
+  padding: var(--spacing-4xl);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.06);
+}
+
+.carte-reservation__content {
+  display: grid;
+  gap: 0.75rem;
 }
 
 .carte-reservation h3 {
-  font-family: var(--font-titre);
-  font-size: var(--font-base);
-  margin-bottom: var(--spacing-xs);
-  color: var(--black);
+  font-size: var(--font-xl);
+  margin-bottom: 0.5rem;
 }
 
-.carte-reservation p {
-  font-size: var(--font-sm);
-  color: var(--texte-secondaire);
-  margin-bottom: 4px;
+.carte-reservation__date,
+.carte-reservation__conducteur,
+.carte-reservation__prix {
+  color: #4b5563;
+  line-height: 1.6;
 }
 
-.carte-reservation--placeholder {
-  opacity: 0.9;
+.carte-reservation__actions {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .statut {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem 0.8rem;
-  border-radius: var(--radius-badge);
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
   font-family: var(--font-btn-lien);
   font-size: var(--font-xs);
-  font-weight: var(--font-medium);
-  text-transform: capitalize;
-  white-space: nowrap;
+  font-weight: var(--font-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .statut-effectue {
-  background: var(--vert-nuance);
-  color: var(--vert-fonce);
+  background-color: #dcfce7;
+  color: #166534;
 }
 
-.statut-en_attente {
-  background: var(--bleu);
-  color: #29557a;
+.statut-en_attente,
+.statut-en_cours {
+  background-color: #fef9c3;
+  color: #854d0e;
 }
 
 .statut-annule {
-  background: var(--rouge-nuance);
-  color: var(--rouge);
+  background-color: #fee2e2;
+  color: #991b1b;
 }
 
-/* Responsive */
+/* Carte d'action interne */
+.carte-reservation__actions .btn {
+  padding: 0.8rem 1.2rem;
+}
+
+/* Responsive : tablette */
 @media only screen and (min-width: 768px) {
-  .h1 {
-    font-size: var(--font-2xl);
+  .barre-recherche-tel {
+    flex-direction: row;
+    align-items: flex-end;
+    flex-wrap: wrap;
   }
 
-  .h2 {
-    font-size: var(--font-xl);
+  .barre-recherche-tel .field {
+    flex: 1 1 250px;
   }
 
-  .topbar__nav {
-    display: flex;
+  .barre-recherche-tel .btn {
+    flex: 0 0 auto;
   }
 
   .hero-card {
@@ -376,30 +429,38 @@ body {
     align-items: center;
   }
 
-  .barre-recherche-tel {
-    flex-direction: row;
-    align-items: end;
+  .liste-reservations {
+    gap: var(--spacing-lg);
   }
 
-  .field {
-    flex: 1;
-  }
-
-  .field--select {
-    max-width: 220px;
+  .carte-reservation {
+    padding: var(--spacing-4xl);
   }
 }
 
+/* Responsive : desktop */
 @media only screen and (min-width: 1024px) {
-  .h1 {
-    font-size: var(--font-3xl);
+  #page-mes-trajets {
+    padding: var(--spacing-6xl) var(--spacing-5xl);
   }
 
-  .h2 {
-    font-size: var(--font-2xl);
+  .hero-card {
+    gap: var(--spacing-md);
   }
 
-  .page-mes-trajets {
-    padding-top: var(--spacing-3xl);
+  .carte-reservation {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+  }
+
+  .carte-reservation__content {
+    max-width: 70%;
+  }
+
+  .carte-reservation__actions {
+    justify-content: flex-end;
   }
 }
+

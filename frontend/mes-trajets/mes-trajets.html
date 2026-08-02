@@ -3,43 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BraCovoit — Mes trajets</title>
+  <title>EasyCar — Mes trajets</title>
   <link rel="stylesheet" href="mes-trajets.css">
 </head>
 <body id="page-mes-trajets">
-  <header class="topbar">
-    <div class="brand">
-      <span class="brand__logo">EasyCar</span>
-      <span class="brand__tag">Brazzaville</span>
-    </div>
-    <nav class="topbar__nav" aria-label="Navigation principale">
-      <a class="link" href="../recherche/recherche.html">Réserver</a>
-      <a class="link" href="../proposer/proposer.html">Proposer</a>
-      <a class="link link--active" href="mes-trajets.html">Mes trajets</a>
-      <a class="link" href="#">Aide</a>
-    </nav>
-    <div id="nav-session" class="nav-session"></div>
-  </header>
+
+  <!-- NAVIGATION — TODO (Dev FS5) -->
+
+  <!-- NE PAS MODIFIER l'id — main.js y affiche l'état de connexion -->
+  <div id="nav-session"></div>
 
   <main class="page-mes-trajets">
-    <section class="hero-card">
-      <div class="hero-card__content">
-        <p class="eyebrow">Historique</p>
-        <h1 class="h1">Mes trajets</h1>
-        <p class="text">Consultez vos réservations, suivez vos voyages et gérez vos dépenses en un seul endroit.</p>
-      </div>
-      <div class="resume-card" aria-label="Résumé des dépenses">
-        <div class="resume-card__icon">payments</div>
-        <div>
-          <p class="eyebrow">Dépenses totales</p>
-          <p class="resume-card__value">Total dépensé : <strong id="mt-total">0 FCFA</strong></p>
-        </div>
-      </div>
-    </section>
-
+    <!-- =====================================================================
+         RECHERCHE PAR NUMÉRO — TODO (Dev FS5)
+         Mettre en forme le bloc de saisie du numéro de téléphone, le
+         bouton de chargement et le filtre de statut. Layout en ligne sur
+         desktop, empilé sur mobile.
+        
+         *** NE PAS MODIFIER les id ci-dessous — main.js les utilise ***
+         ===================================================================== -->
     <section class="filtres-card" aria-label="Recherche et filtre des trajets">
       <div class="filtres-card__title">
-        <h2 class="h2">Rechercher mes réservations</h2>
+        <h2 class="h1">Rechercher mes réservations</h2>
         <p class="text">Saisissez votre numéro de téléphone pour afficher vos trajets.</p>
       </div>
       <div class="barre-recherche-tel">
@@ -60,23 +45,62 @@
       </div>
     </section>
 
-    <section class="liste-section" aria-labelledby="historique-titre">
+
+    <!-- TOTAL DÉPENSÉ — TODO (Dev FS5) : mettre en avant ce chiffre
+         visuellement (encart ou bandeau).
+         *** NE PAS MODIFIER l'id *** -->
+    <section class="hero-card">
+      <div class="hero-card__content">
+        <h2 class="h2">Mes trajets</h2>
+        <p class="text">Consultez vos réservations, suivez vos voyages et gérez vos dépenses en un seul endroit.</p>
+      </div>
+      <div class="resume-card" aria-label="Résumé des dépenses">
+        <div class="resume-card__icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="5" width="20" height="14" rx="3" fill="currentColor" opacity="0.12" />
+            <rect x="4" y="8" width="16" height="3" rx="1.5" fill="currentColor" />
+            <rect x="6" y="14" width="5" height="2" rx="1" fill="currentColor" />
+            <rect x="14" y="14" width="4" height="2" rx="1" fill="currentColor" />
+          </svg>
+        </div>
+        <div>
+          <p class="eyebrow">Dépenses totales</p>
+          <p class="total-depense">Total dépensé : <strong id="mt-total">5.000 FCFA</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+             LISTE DES RÉSERVATIONS — TODO (Dev FS5)
+             main.js remplit ce conteneur avec des cartes .carte-reservation,
+             chacune avec un <h3>, des <p> (date, conducteur, prix), et un
+            <span class="statut statut-effectue|statut-en_attente|statut-annule">.
+             Prévoyez une couleur distincte par statut. Layout en liste verticale
+             ou grille selon votre choix.
+    
+             *** NE PAS MODIFIER l'id ***
+             ===================================================================== -->
+    <section id="mt-liste" class="liste-section" aria-labelledby="historique-titre">
       <div class="section-heading">
         <h2 class="h2" id="historique-titre">Historique des réservations</h2>
         <p class="text">Vos trajets apparaissent ici avec leur statut et leur montant.</p>
       </div>
-      <div id="mt-liste" class="liste-reservations">
-        <article class="carte-reservation carte-reservation--placeholder">
-          <div>
-            <h3>Bacongo → Poto-Poto</h3>
-            <p>Date : 05 juillet 2026 à 07:30</p>
-            <p>Conducteur : Jean M.</p>
-            <p>Prix : 1 500 FCFA</p>
+      <div class="liste-reservations" id="mt-liste-reservations" aria-live="polite">
+        <article class="carte-reservation">
+          <div class="carte-reservation__content">
+            <h3>Trajet Poto-Poto</h3>
+            <p class="carte-reservation__date">Date :01 Juillet 2026 à 08:00</p>
+            <p class="carte-reservation__conducteur">Conducteur : Martin Makosso</p>
+            <p class="carte-reservation__prix">Prix : 3 500 FCFA</p>
           </div>
-          <span class="statut statut-en_attente">en_attente</span>
+          <span class="statut statut-en_cours">En cours </span>
+          <div class="carte-reservation__actions">
+            <button class="btn">Suivre</button>
+          </div>
         </article>
       </div>
     </section>
+
   </main>
 
   <div id="erreur-globale" hidden></div>
