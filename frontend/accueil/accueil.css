@@ -175,7 +175,7 @@
 /* Tablette */
 @media only screen and (min-width: 768px) {
   /* Titre */
-  
+
   .h1 {
     font-size: var(--font-2xl);
   }
@@ -231,11 +231,9 @@
     z-index:1000;
 }
     */
-
 }
- 
 
-/* Laptop */ 
+/* Laptop */
 @media only screen and (min-width: 1024px) {
   /* Titre */
   .h1 {
@@ -259,23 +257,22 @@
 
 /* Laptop-L ou Desktop */
 
-  @media only screen and (min-width:1024px){
+@media only screen and (min-width: 1024px) {
+  .cartes-indicateurs {
+    grid-template-columns: repeat(4, 1fr);
+  }
 
-.cartes-indicateurs{
-grid-template-columns:repeat(4,1fr);
-}
+  .hero {
+    padding: var(--spacing-5xl);
+  }
 
-.hero{
-padding:var(--spacing-5xl);
-}
+  .navigation {
+    display: flex;
+  }
 
-.navigation{
-display:flex;
-}
-
-.burger{
-display:none;
-}
+  .burger {
+    display: none;
+  }
 }
 
 /* suite */
@@ -303,20 +300,22 @@ header span {
   font-weight: var(--font-medium);
   color: var(--vert-fonce);
   text-decoration: none;
-  transition:color 0.4s, transform 0.4s;
+  transition:
+    color 0.4s,
+    transform 0.4s;
 }
-  
+
 .navigation a:hover {
   color: var(--vert);
   transform: translateY(-2px);
-   text-decoration: underline;
+  text-decoration: underline;
 }
 #nav-session {
   display: flex;
   gap: var(--spacing-md);
 }
 #nav-session a {
- font-family: var(--font-btn-lien);
+  font-family: var(--font-btn-lien);
   font-size: var(--font-sm);
   font-weight: var(--font-medium);
   padding: var(--spacing-btn-lien);
@@ -329,13 +328,12 @@ header span {
   transition: background-color 0.4s;
 }
 
-
 #nav-session a:hover {
   background-color: var(--vert-fonce);
   color: var(--blanc);
 }
 
-.burger{
+.burger {
   display: none;
   background: none;
   cursor: none;
@@ -344,7 +342,7 @@ header span {
   flex-direction: column;
   justify-content: space-between;
 }
-.burger span{
+.burger span {
   display: block;
   height: 4px;
   width: 100%;
@@ -353,30 +351,31 @@ header span {
 }
 .badge-vert img {
   height: 20px;
-  width: 20px;  
+  width: 20px;
   margin-left: var(--spacing-md);
   margin-top: var(--spacing-md);
   border-radius: 20px;
-
 }
 .hero {
-  height:calc(100vh - 60px);
-  padding:var(--spacing-4xl);
+  height: calc(100vh - 60px);
+  padding: var(--spacing-4xl);
   background-color: var(--gris);
   height: calc(100vh - 60px);
-  background: radial-gradient(rgba(16, 15, 15, 0.594), rgba(35, 35, 35, 0.612)), url(https://res.cloudinary.com/wciaqqgg/image/upload/f_auto,q_auto/a_professional_hero_image_for_a_ride_sharing_app._a_modern_green_taxi_car_with_1_sssjf2) no-repeat center center;
+  background:
+    radial-gradient(rgba(16, 15, 15, 0.594), rgba(35, 35, 35, 0.612)),
+    url(https://res.cloudinary.com/wciaqqgg/image/upload/f_auto,q_auto/a_professional_hero_image_for_a_ride_sharing_app._a_modern_green_taxi_car_with_1_sssjf2)
+      no-repeat center center;
   background-size: cover;
   display: flex;
   justify-content: flex-start;
   padding: var(--spacing-4xl);
   align-items: center;
-  
 }
 .hero h1 {
   font-family: var(--font-titre);
   font-size: var(--font-3xl);
   font-weight: var(--font-extra-bold);
-  color:var(  --blanc);
+  color: var(--blanc);
   margin-bottom: var(--spacing-3xl);
 }
 .hero span {
@@ -410,13 +409,13 @@ header span {
 }
 
 .commentMarche h2 {
- display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   font-family: var(--font-titre);
   font-size: var(--font-2xl);
   font-weight: var(--font-extra-bold);
-  color:var(  --vert-fonce);
+  color: var(--vert-fonce);
   margin-bottom: var(--spacing-3xl);
 }
 .commentMarche #description-comment-marche {
@@ -436,52 +435,54 @@ header span {
   flex-wrap: wrap;
 }
 
- .etape{
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-start;
-    align-items:center;
-    flex:1 1 280px;
-    max-width:320px;
-    padding:30px;
-    background-color:var(--blanc);
-    border-radius:10px;
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
-    text-align:center;
-    font-family:var(--font-texte);
-    font-size:var(--font-lg);
-    font-weight:var(--font-regular);
-    color:var(--black);
-    transition:transform .3s ease, box-shadow .3s ease;
+.etape {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 1 1 280px;
+  max-width: 320px;
+  padding: 30px;
+  background-color: var(--blanc);
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  font-family: var(--font-texte);
+  font-size: var(--font-lg);
+  font-weight: var(--font-regular);
+  color: var(--black);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.etape:hover{
-    transform:translateY(-8px);
-    box-shadow:0 12px 30px rgba(0,0,0,.12);
+.etape:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
-.etape img{
-    width:100%;
-    max-width:260px;
-    height:180px;
-    object-fit:cover;
-    border-radius:15px;
-    margin-bottom:20px;
+.etape img {
+  width: 100%;
+  max-width: 260px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 20px;
 }
 
-.etape span{
-    font-family:var(--font-titre);
-    font-size:1.25rem;
-    font-weight:700;
-    color:var(--vert-fonce);
-    margin-bottom:15px;
+.etape span {
+  font-family: var(--font-titre);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--vert-fonce);
+  margin-bottom: 15px;
 }
 
-.etape p{
-    font-family:var(--font-texte);
-    font-size:var(--font-base);
-    line-height:1.6;
-    color:var(--black);
+.etape p {
+  font-family: var(--font-texte);
+  font-size: var(--font-base);
+  line-height: 1.6;
+  color: var(--black);
 }
 
 .pret {
@@ -491,7 +492,10 @@ header span {
   text-align: center;
   gap: var(--spacing-md);
   padding: var(--spacing-5xl);
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://res.cloudinary.com/wciaqqgg/image/upload/f_auto,q_auto/a_professional_hero_image_for_a_ride_sharing_app._a_modern_green_taxi_car_with_1_sssjf2) no-repeat center center;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(https://res.cloudinary.com/wciaqqgg/image/upload/f_auto,q_auto/a_professional_hero_image_for_a_ride_sharing_app._a_modern_green_taxi_car_with_1_sssjf2)
+      no-repeat center center;
   background-attachment: fixed;
   background-size: cover;
 }
@@ -499,142 +503,87 @@ header span {
   font-family: var(--font-titre);
   font-size: var(--font-2xl);
   font-weight: var(--font-extra-bold);
-  color:var(  --blanc);
+  color: var(--blanc);
   margin-bottom: var(--spacing-md);
 }
 
-.grid-pourquoi{
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    width:100%;
-    padding:var(--spacing-5xl);
-    background-color:var(--blanc);
+.grid-pourquoi {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: var(--spacing-5xl);
+  background-color: var(--blanc);
 }
 
-.grid-pourquoi h2{
-    font-family:var(--font-titre);
-    font-size:var(--font-2xl);
-    font-weight:var(--font-extra-bold);
-    color:var(--vert-fonce);
-    margin-bottom:var(--spacing-md);
+.grid-pourquoi h2 {
+  font-family: var(--font-titre);
+  font-size: var(--font-2xl);
+  font-weight: var(--font-extra-bold);
+  color: var(--vert-fonce);
+  margin-bottom: var(--spacing-md);
 }
 
-.grid-pourquoi #description-Pourquoi-EasyCar{
-    font-family:var(--font-texte);
-    font-size:var(--font-lg);
-    font-weight:var(--font-regular);
-    color:var(--black);
-    text-align:center;
-    max-width:700px;
-    line-height:1.7;
-    margin-bottom:var(--spacing-3xl);
+.grid-pourquoi #description-Pourquoi-EasyCar {
+  font-family: var(--font-texte);
+  font-size: var(--font-lg);
+  font-weight: var(--font-regular);
+  color: var(--black);
+  text-align: center;
+  max-width: 700px;
+  line-height: 1.7;
+  margin-bottom: var(--spacing-3xl);
 }
 
-
-.grid-container{
-    width:100%;
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
-    gap:var(--spacing-md);
+.grid-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-md);
 }
 
 .grid-item1,
 .grid-item2,
-.grid-item3{
-    background:#fff;
-    padding:30px;
-    border-radius:20px;
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    text-align:center;
-    transition:.3s;
+.grid-item3 {
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: 0.3s;
 }
 
 .grid-item1:hover,
 .grid-item2:hover,
-.grid-item3:hover{
-    transform:translateY(-6px);
+.grid-item3:hover {
+  transform: translateY(-6px);
 }
-.grid-container img{
-    width:100px;
-    height:100px;
-    object-fit:cover;
-    border-radius:50%;
-    margin-bottom:20px;
-}
-
-.grid-container span{
-    font-family:var(--font-titre);
-    font-size:1.3rem;
-    font-weight:700;
-    color:var(--vert-fonce);
-    margin-bottom:15px;
+.grid-container img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
 }
 
-.grid-container p{
-    line-height:1.6;
-    color:var(--black);
-
+.grid-container span {
+  font-family: var(--font-titre);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--vert-fonce);
+  margin-bottom: 15px;
 }
 
-
-
-@media screen and (max-width: 700px) {
-  
-
-header{
-    padding:var(--spacing-sm);
-}
-header span{
-
-    font-size:var(--font-xl);
-
+.grid-container p {
+  line-height: 1.6;
+  color: var(--black);
 }
 
-.navigation{
-    display:none;
-}
-
-#nav-session{
-    display:none;
-}
-
-.burger{
-    display:flex;
-    border:none;
-
-}
-
-.navigation{
-
-    display:none;
-
-}
-
-.navigation.active{
-  display:flex;
-    flex-direction:column;
-    position:absolute;
-    top:70px;
-    left:0;
-
-    width:100%;
-
-    background-color:var(--blanc);
-
-    padding:30px;
-
-    gap:25px;
-
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
-
-    z-index:1000;
-}
-
+@media screen and (max-width: 768px) {
 }
 
 /* il reste une div  a la dernière section que je dois faire  */
