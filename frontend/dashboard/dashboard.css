@@ -615,9 +615,7 @@ tbody tr:hover{
   .btn-link {
     font-size: var(--font-base);
   }
-/* ===========================
-   DASHBOARD DESKTOP
-=========================== */
+
 
 .grille-indicateurs{
     display:grid;
@@ -634,19 +632,15 @@ tbody tr:hover{
 .carte-indicateur{
     min-height:150px;
     padding:20px;
-    width:  200px;
+    width: 180px;
     background:var(--blanc);
     border-radius:20px;
-
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-
     gap:10px;
-
     box-shadow:0 10px 25px rgba(15,23,42,.08);
-
     transition:.3s ease;
 }
 
@@ -726,7 +720,7 @@ tbody tr:hover{
     padding:25px;
     border-radius:20px;
     box-shadow:0 10px 25px rgba(15,23,42,.1);
-    width: 800px;
+    width: 600px;
 
 }
 
