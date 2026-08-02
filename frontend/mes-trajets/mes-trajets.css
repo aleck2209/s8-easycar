@@ -310,6 +310,7 @@
   border-radius: 20px;
   background-color: #e6fff1;
   border: 1px solid rgba(0, 165, 114, 0.15);
+  font-family: var(--font-texte);
 }
 
 .resume-card__icon {
