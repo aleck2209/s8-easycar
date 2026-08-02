@@ -1,42 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BraCovoit — Détail du trajet</title>
-  <link rel="stylesheet" href="trajet.css">
-</head>
-<body id="page-trajet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BraCovoit — Détail du trajet</title>
+    <link rel="stylesheet" href="trajet.css" />
+  </head>
+  <body id="page-trajet">
+    <!-- NAVIGATION — TODO (Dev FS3) -->
 
-  <!-- NAVIGATION — TODO (Dev FS3) -->
+    <!-- NE PAS MODIFIER l'id — main.js y affiche l'état de connexion -->
+    <header>
+      <a href="../accueil/index.html"><span id="logo">EasyCar</span></a>
 
-  <!-- NE PAS MODIFIER l'id — main.js y affiche l'état de connexion -->
-   <header>
-    <a href="../accueil/index.html"><span id="logo">EasyCar</span></a>
-    
-    <!-- <div class="nav-wrapper"> -->
+      <!-- <div class="nav-wrapper"> -->
       <nav class="navigation">
-      <a href="../accueil/index.html"></a>
-      <a href="../mes-trajets/mes-trajets.html">Mes trajets</a>
-      <a href="../proposer/proposer.html">Proposer un trajet</a>
-      <a href="../recherche/recherche.html">Recherche</a>
-      <a href="../trajet/trajet.html">Mes trajets</a>
-      <a href="../dashboard/dashboard.html">Tableau de bord</a>
-      <a href="../confirmation/confirmation.html">Confirmation</a>
-    </nav>
-  
-    <div id="nav-session" > </div>
-     <!-- </div> -->
+        <a href="../accueil/index.html"></a>
+        <a href="../mes-trajets/mes-trajets.html">Mes trajets</a>
+        <a href="../proposer/proposer.html">Proposer un trajet</a>
+        <a href="../recherche/recherche.html">Recherche</a>
+        <a href="../trajet/trajet.html">Mes trajets</a>
+        <a href="../dashboard/dashboard.html">Tableau de bord</a>
+        <a href="../confirmation/confirmation.html">Confirmation</a>
+      </nav>
 
-    <button class="burger" aria-label="Menu de navigation" id="burger">   
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </header>
+      <div id="nav-session"></div>
+      <!-- </div> -->
 
-  <main>
-    <!-- =====================================================================
+      <button class="burger" aria-label="Menu de navigation" id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+
+    <main class="main">
+      <!-- =====================================================================
          ENTÊTE TRAJET — TODO (Dev FS3)
          Mettre en forme le titre du trajet, l'heure, la date, le prix, le
          commentaire éventuel et le badge de disponibilité. Le badge reçoit
@@ -45,31 +44,31 @@
 
          *** NE PAS MODIFIER les id ci-dessous — main.js les utilise ***
          ===================================================================== -->
-    <section class="entete-trajet">
-      <h1 id="trajet-titre"></h1>
-      <p>Heure : <span id="trajet-heure"></span></p>
-      <p>Date : <span id="trajet-date"></span></p>
-      <p>Prix : <span id="trajet-prix"></span></p>
-      <p>Commentaire : <span id="trajet-commentaire"></span></p>
-      <span id="badge-places" class="badge"></span>
-    </section>
+      <section class="entete-trajet">
+        <h1 class="h1" id="trajet-titre"></h1>
+        <p class="text">Heure : <span id="trajet-heure"></span></p>
+        <p class="text">Date : <span id="trajet-date"></span></p>
+        <p class="text">Prix : <span id="trajet-prix"></span></p>
+        <p class="text">Commentaire : <span id="trajet-commentaire"></span></p>
+        <span id="badge-places" class="badge"></span>
+      </section>
 
-    <!-- =====================================================================
+      <!-- =====================================================================
          FICHE CONDUCTEUR — TODO (Dev FS3)
          Mettre en forme l'encart conducteur : nom, véhicule, note,
          expérience. Un visuel type "carte profil" est attendu.
 
          *** NE PAS MODIFIER les id ci-dessous ***
          ===================================================================== -->
-    <section class="fiche-conducteur">
-      <h2>Conducteur</h2>
-      <p>Nom : <span id="conducteur-nom"></span></p>
-      <p>Véhicule : <span id="conducteur-vehicule"></span></p>
-      <p>Note : <span id="conducteur-note"></span></p>
-      <p>Expérience : <span id="conducteur-trajets"></span></p>
-    </section>
+      <section class="fiche-conducteur">
+        <h2 class="h2 fiche-conducteur-titre">Conducteur</h2>
+        <p class="h3 nom-conducteur">Nom : <span id="conducteur-nom"></span></p>
+        <p class="text">Véhicule : <span id="conducteur-vehicule"></span></p>
+        <p class="text">Note : <span id="conducteur-note"></span></p>
+        <p class="text">Expérience : <span id="conducteur-trajets"></span></p>
+      </section>
 
-    <!-- =====================================================================
+      <!-- =====================================================================
          FORMULAIRE DE RÉSERVATION — TODO (Dev FS3)
          Mettre en forme le formulaire : nom, téléphone, bouton (désactivé
          si trajet complet — main.js gère l'attribut disabled). Si
@@ -78,83 +77,84 @@
 
          *** NE PAS MODIFIER les id ci-dessous — main.js les utilise ***
          ===================================================================== -->
-    <form id="form-reservation">
-      <label for="r-nom">Votre nom</label>
-      <input type="text" id="r-nom">
+      <form class="form-reservation" id="form-reservation">
+        <label class="text label" for="r-nom">Votre nom</label>
+        <input
+          class="text input"
+          type="text"
+          id="r-nom"
+          placeholder="Jean Dominque"
+        />
 
-      <label for="r-tel">Votre téléphone</label>
-      <input type="tel" id="r-tel">
+        <label class="text label" for="r-tel">Votre téléphone</label>
+        <input
+          class="text input"
+          type="tel"
+          id="r-tel"
+          placeholder="065752215"
+        />
 
-      <button type="submit" id="btn-reserver">Réserver une place</button>
-    </form>
-
-    <!-- Zone d'erreurs de validation — TODO (Dev FS3) : mettre en forme la
+        <button class="btn" type="submit" id="btn-reserver">
+          Réserver une place
+        </button>
+        <!-- Zone d'erreurs de validation — TODO (Dev FS3) : mettre en forme la
          liste <ul><li> injectée par main.js en cas de formulaire invalide.
          NE PAS MODIFIER l'id. -->
-    <div id="erreurs-form" hidden></div>
-  </main>
+        <div class="erreurs-form" id="erreurs-form" hidden></div>
+      </form>
 
-  <div id="erreur-globale" hidden></div>
- <footer class="footer">
+      
+    </main>
 
-    <div class="footer-container">
-
+    <div id="erreur-globale" hidden></div>
+    <footer class="footer">
+      <div class="footer-container">
         <div class="footer-logo">
-            <h2>EasyCar</h2>
-            <p>
-                La plateforme de covoiturage qui facilite vos déplacements
-                entre les quartiers de Brazzaville.
-            </p>
+          <h2>EasyCar</h2>
+          <p>
+            La plateforme de covoiturage qui facilite vos déplacements entre les
+            quartiers de Brazzaville.
+          </p>
         </div>
 
         <div class="footer-liens">
-            <h3>Navigation</h3>
+          <h3>Navigation</h3>
 
-            <a href="../index.html">Accueil</a>
-            <a href="../recherche/recherche.html">Recherche</a>
-            <a href="../proposer/proposer.html">Proposer un trajet</a>
-            <a href="../mes-trajets/mes-trajets.html">Mes trajets</a>
-            <a href="../dashboard/dashboard.html">Tableau de bord</a>
-
+          <a href="../index.html">Accueil</a>
+          <a href="../recherche/recherche.html">Recherche</a>
+          <a href="../proposer/proposer.html">Proposer un trajet</a>
+          <a href="../mes-trajets/mes-trajets.html">Mes trajets</a>
+          <a href="../dashboard/dashboard.html">Tableau de bord</a>
         </div>
 
         <div class="footer-compte">
-            <h3>Compte</h3>
+          <h3>Compte</h3>
 
-            <a href="../inscription/inscription.html">Inscription</a>
-            <a href="../connexion/connexion.html">Connexion</a>
-
+          <a href="../inscription/inscription.html">Inscription</a>
+          <a href="../connexion/connexion.html">Connexion</a>
         </div>
 
         <div class="footer-contact">
+          <h3>Contact</h3>
 
-            <h3>Contact</h3>
+          <p>Brazzaville, Congo</p>
 
-            <p> Brazzaville, Congo</p>
+          <p>Conacte@easycar.com</p>
 
-            <p>Conacte@easycar.com</p>
-
-            <p> +242 06 957 94 03</p>
-
+          <p>+242 06 957 94 03</p>
         </div>
+      </div>
 
-    </div>
-
-    <div class="footer-bottom">
-
-        <p>
-            © 2026 EasyCar. Tous droits réservés.
-        </p>
+      <div class="footer-bottom">
+        <p>© 2026 EasyCar. Tous droits réservés.</p>
 
         <p>
-            Projet pédagogique développé dans le cadre de la formation
-            Akieni Academy.
+          Projet pédagogique développé dans le cadre de la formation Akieni
+          Academy.
         </p>
-
-    </div>
-
-</footer>
-  <script src="../functions.js"></script>
-  <script src="../main.js"></script>
-</body>
+      </div>
+    </footer>
+    <script src="../functions.js"></script>
+    <script src="../main.js"></script>
+  </body>
 </html>
