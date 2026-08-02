@@ -27,13 +27,14 @@ function compterTrajetsAujourdhui(trajets, dateAujourdhui) {
      * Exemple : compterTrajetsAujourdhui([{date:"2026-07-27"},{date:"2026-07-28"}], "2026-07-27") → 1
      */
     // TODO
-    for (let trajet of trajets){
-       let compteur=0;
-    if (trajet.date === dateAujourdhui){
-        compteur= compteur + 1;
+  let compteur = 0;
+
+    for (let trajet of trajets) {
+        if (trajet.date === dateAujourdhui) {
+            compteur++;
+        }
     }
     return compteur;
-}
 }
 
 function formaterQuartierPrincipal(compteParQuartier) {
@@ -45,7 +46,7 @@ function formaterQuartierPrincipal(compteParQuartier) {
      */
     // TODO
 if (Object.keys(compteParQuartier).length === 0){
-    return "Aucun trajets "
+    return "Aucun trajet";
 }
 let meilleur ="";
 let Maximum=0;

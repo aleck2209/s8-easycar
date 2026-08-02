@@ -364,7 +364,7 @@ header span {
   padding:var(--spacing-4xl);
   background-color: var(--gris);
   height: calc(100vh - 60px);
-  background: radial-gradient(rgba(16, 15, 15, 0.594), rgba(35, 35, 35, 0.612)), url(../img/1.png) no-repeat center center;
+  background: radial-gradient(rgba(16, 15, 15, 0.594), rgba(35, 35, 35, 0.612)), url(https://res.cloudinary.com/wciaqqgg/image/upload/f_auto,q_auto/a_professional_hero_image_for_a_ride_sharing_app._a_modern_green_taxi_car_with_1_sssjf2) no-repeat center center;
   background-size: cover;
   display: flex;
   justify-content: flex-start;
@@ -491,7 +491,7 @@ header span {
   text-align: center;
   gap: var(--spacing-md);
   padding: var(--spacing-5xl);
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/1.png) no-repeat center center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://res.cloudinary.com/wciaqqgg/image/upload/f_auto,q_auto/a_professional_hero_image_for_a_ride_sharing_app._a_modern_green_taxi_car_with_1_sssjf2) no-repeat center center;
   background-attachment: fixed;
   background-size: cover;
 }
