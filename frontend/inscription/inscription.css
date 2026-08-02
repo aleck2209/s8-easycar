@@ -294,12 +294,14 @@
 
   .presentation-container {
     max-width: 300px;
+    height: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: var(--spacing-sm);
     position: relative;
     z-index: 2;
+    justify-content: center;
   }
 
   .easycar {
@@ -315,6 +317,9 @@
   }
 
   .section-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 50%;
     padding: var(--spacing-xl) 0;
   }
@@ -342,15 +347,17 @@
     font-size: var(--font-base);
   }
 
+  /* debut de la page inscription */
   .section-form {
     margin: 0 auto;
-    max-width: 400px;
+    max-width: 410px;
   }
 
   .presentation-container {
-    max-width: 400px;
+    max-width: 410px;
     margin: 0 auto;
   }
+  /* fin de la page inscription */
 }
 
 /* Laptop-L ou Desktop */
