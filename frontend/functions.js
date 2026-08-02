@@ -242,6 +242,40 @@ function validerFormulaireInscription(formulaire) {
      * - mot_de_passe obligatoire, au moins 4 caractères
      */
     // TODO
+    // destructuration de l'objet formulaire
+    const {nom, telephone, mot_de_passe} = formulaire;
+
+    const nomTrim = nom.trim();
+
+    let resultat = {
+        valide: true,
+        erreurs: []
+    };
+
+    if (!nomTrim) {
+        resultat.valide = false;
+        resultat.erreurs.push('Le nom est obligatoire.')
+        return resultat;
+    } else if (!telephone) {
+        resultat.valide = false;
+        resultat.erreurs.push('Le numéro de téléphone est obligatoire.');
+        return resultat;
+    } else if (telephone.length < 9) {
+        resultat.valide = false;
+        resultat.erreurs.push('Le numéro de téléphone doit contenir au moins 9 chiffres.');
+        return resultat;
+    } else if (!mot_de_passe) {
+        resultat.valide = false;
+        resultat.erreurs.push('Le mot de passe est obligatoire.');
+        return resultat;
+    } else if (mot_de_passe.lenght < 4) {
+        resultat.valide = false;
+        resultat.erreurs.push('Le mot de passe doit contenir au moins 4 caractères.');
+        return resultat;
+    } else {
+        resultat.valide = true;
+        return resultat;
+    }   
 }
 
 function validerFormulaireLogin(formulaire) {
@@ -255,6 +289,25 @@ function validerFormulaireLogin(formulaire) {
      * - mot_de_passe obligatoire
      */
     // TODO
+    const {telephone, mot_de_passe} = formulaire;
+
+    let resultat = {
+        valide: true,
+        erreurs: []
+    }
+
+    if (!telephone) {
+        resultat.valide = false;
+        resultat.erreurs.push('Le numéro de téléphone est obligatoire.');
+        return resultat;
+    } else if (!mot_de_passe) {
+        resultat.valide = false;
+        resultat.erreurs.push('Le mot de passe est obligatoire.');
+        return resultat;
+    } else {
+        resultat.valide = true;
+        return resultat;
+    }
 }
 
 // ============================================================================
