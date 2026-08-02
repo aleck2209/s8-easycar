@@ -11,7 +11,29 @@
   <!-- NAVIGATION — TODO (Dev FS3) -->
 
   <!-- NE PAS MODIFIER l'id — main.js y affiche l'état de connexion -->
-  <div id="nav-session"></div>
+   <header>
+    <a href="../accueil/index.html"><span id="logo">EasyCar</span></a>
+    
+    <!-- <div class="nav-wrapper"> -->
+      <nav class="navigation">
+      <a href="../accueil/index.html"></a>
+      <a href="../mes-trajets/mes-trajets.html">Mes trajets</a>
+      <a href="../proposer/proposer.html">Proposer un trajet</a>
+      <a href="../recherche/recherche.html">Recherche</a>
+      <a href="../trajet/trajet.html">Mes trajets</a>
+      <a href="../dashboard/dashboard.html">Tableau de bord</a>
+      <a href="../confirmation/confirmation.html">Confirmation</a>
+    </nav>
+  
+    <div id="nav-session" > </div>
+     <!-- </div> -->
+
+    <button class="burger" aria-label="Menu de navigation" id="burger">   
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
 
   <main>
     <!-- =====================================================================
@@ -73,7 +95,65 @@
   </main>
 
   <div id="erreur-globale" hidden></div>
+ <footer class="footer">
 
+    <div class="footer-container">
+
+        <div class="footer-logo">
+            <h2>EasyCar</h2>
+            <p>
+                La plateforme de covoiturage qui facilite vos déplacements
+                entre les quartiers de Brazzaville.
+            </p>
+        </div>
+
+        <div class="footer-liens">
+            <h3>Navigation</h3>
+
+            <a href="../index.html">Accueil</a>
+            <a href="../recherche/recherche.html">Recherche</a>
+            <a href="../proposer/proposer.html">Proposer un trajet</a>
+            <a href="../mes-trajets/mes-trajets.html">Mes trajets</a>
+            <a href="../dashboard/dashboard.html">Tableau de bord</a>
+
+        </div>
+
+        <div class="footer-compte">
+            <h3>Compte</h3>
+
+            <a href="../inscription/inscription.html">Inscription</a>
+            <a href="../connexion/connexion.html">Connexion</a>
+
+        </div>
+
+        <div class="footer-contact">
+
+            <h3>Contact</h3>
+
+            <p> Brazzaville, Congo</p>
+
+            <p>Conacte@easycar.com</p>
+
+            <p> +242 06 957 94 03</p>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 EasyCar. Tous droits réservés.
+        </p>
+
+        <p>
+            Projet pédagogique développé dans le cadre de la formation
+            Akieni Academy.
+        </p>
+
+    </div>
+
+</footer>
   <script src="../functions.js"></script>
   <script src="../main.js"></script>
 </body>
