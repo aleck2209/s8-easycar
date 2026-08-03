@@ -206,10 +206,31 @@ header a {
   transform: translateY(-2px);
    text-decoration: underline;
 }
+
 #nav-session {
   display: flex;
   gap: var(--spacing-md);
+  align-items: center;
+  font-family: var(--font-texte);
+  font-size: var(--font-sm);
+  font-weight: var(--font-regular);
+  color: var(--black);
 }
+
+#nav-session button {
+  font-family: var(--font-btn-lien);
+  font-size: var(--font-sm);
+  font-weight: var(--font-medium);
+  padding: var(--spacing-btn-lien);
+  background-color: var(--vert-fonce);
+  color: var(--blanc);
+  border: none;
+  border-radius: var(--radius-btn);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.4s;
+}
+
 #nav-session a {
  font-family: var(--font-btn-lien);
   font-size: var(--font-sm);
@@ -297,6 +318,7 @@ header a {
     grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
     gap:30px;
     padding:40px;
+    font-family: var(--font-texte);
 
 }
 .carte-trajet{
