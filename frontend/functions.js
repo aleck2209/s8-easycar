@@ -246,6 +246,12 @@ function calculerTotalDepenseParPassager(reservations) {
 // ============================================================================
 
 function calculerPourcentageOccupation(placesOccupees, placesTotales) {
+    if (placesTotales===0){
+        return 0;
+    }
+    else{
+        return Math.round((placesOccupees/placesTotales)*100);
+    }
     /**
      * Calcule le pourcentage d'occupation d'un trajet.
      * @param {number} placesOccupees - places réservées
@@ -258,6 +264,15 @@ function calculerPourcentageOccupation(placesOccupees, placesTotales) {
 }
 
 function getBadgeDisponibilite(placesRestantes) {
+    if(placesRestantes===0){
+        return {libelle: "Complet", classe: "badge-complet"};
+    }
+    else if(placesRestantes===1){
+        return {libelle: "1 place", classe: "badge-limite"};
+    }
+    else{
+        return {libelle: `${placesRestantes} places`, classe: "badge-dispo"};
+    }
     /**
      * Retourne le libellé et la classe CSS d'un badge de disponibilité.
      * @param {number} placesRestantes - nombre de places restantes
