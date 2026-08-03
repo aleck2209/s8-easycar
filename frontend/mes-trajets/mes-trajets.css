@@ -22,6 +22,7 @@
   --black: #0f172a;
   --rouge-nuance: #ffbebe;
   --vert-nuance: #beffdb;
+  --bleu-nuance: #e8f3ff;
 
   /* Typographie */
   /* Font-Size */
@@ -199,24 +200,26 @@ header a {
   font-weight: var(--font-medium);
   color: var(--vert-fonce);
   text-decoration: none;
-  transition:color 0.4s, transform 0.4s;
+  transition:
+    color 0.4s,
+    transform 0.4s;
 }
-  
+
 .navigation a:hover {
   color: var(--vert);
   transform: translateY(-2px);
-   text-decoration: underline;
+  text-decoration: underline;
 }
 #nav-session {
   display: flex;
   gap: var(--spacing-md);
 }
 #nav-session a {
- font-family: var(--font-btn-lien);
+  font-family: var(--font-btn-lien);
   font-size: var(--font-sm);
   font-weight: var(--font-medium);
   padding: var(--spacing-btn-lien);
- background-color: var(--vert-fonce);
+  background-color: var(--vert-fonce);
   color: var(--blanc);
   border: 2px solid var(--vert-fonce);
   border-radius: var(--radius-btn);
@@ -225,13 +228,12 @@ header a {
   transition: background-color 0.4s;
 }
 
-
 #nav-session a:hover {
   background-color: var(--blanc);
   color: var(--vert-fonce);
 }
 
-.burger{
+.burger {
   display: none;
   background: none;
   cursor: none;
@@ -240,7 +242,7 @@ header a {
   flex-direction: column;
   justify-content: space-between;
 }
-.burger span{
+.burger span {
   display: block;
   height: 4px;
   width: 100%;
@@ -267,165 +269,133 @@ header a {
   .text {
     font-size: var(--font-base);
   }
-  .footer-container{
+  .footer-container {
+    text-align: center;
+  }
 
-    text-align:center;
+  .footer a {
+    padding-left: 0;
+  }
+}
+@media only screen and (max-width: 990px) {
+  header {
+    padding: var(--spacing-sm);
+  }
+  header span {
+    font-size: var(--font-xl);
+  }
 
+  .navigation {
+    display: none;
+  }
+
+  #nav-session {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+    border: none;
+  }
+
+  .navigation {
+    display: none;
+  }
+
+  .navigation.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+
+    width: 100%;
+
+    background-color: var(--blanc);
+
+    padding: 30px;
+
+    gap: 25px;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+    z-index: 1000;
+  }
+
+  .barre-filtres {
+    flex-direction: column;
+
+    padding: 20px;
+  }
+}
+.footer {
+  background: var(--black);
+
+  color: var(--blanc);
+
+  margin-top: 80px;
 }
 
-.footer a{
+.footer-container {
+  display: grid;
 
-    padding-left:0;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 
-}
-}
-@media only screen and (max-width:990px) {
-  
-header{
-    padding:var(--spacing-sm);
-}
-header span{
+  gap: 40px;
 
-    font-size:var(--font-xl);
-
+  padding: 60px 8%;
 }
 
-.navigation{
-    display:none;
+.footer h2 {
+  color: var(--vert);
+
+  margin-bottom: 15px;
+
+  font-family: var(--font-titre);
 }
 
-#nav-session{
-    display:none;
+.footer h3 {
+  margin-bottom: 20px;
+
+  color: var(--blanc);
+
+  font-family: var(--font-titre);
 }
 
-.burger{
-    display:flex;
-    border:none;
+.footer p {
+  line-height: 1.8;
 
+  color: #d8d8d8;
 }
 
-.navigation{
+.footer a {
+  display: block;
 
-    display:none;
+  margin-bottom: 12px;
 
+  color: #d8d8d8;
+
+  text-decoration: none;
+
+  transition: 0.3s;
 }
 
-.navigation.active{
-  display:flex;
-    flex-direction:column;
-    position:absolute;
-    top:70px;
-    left:0;
+.footer a:hover {
+  color: var(--vert);
 
-    width:100%;
-
-    background-color:var(--blanc);
-
-    padding:30px;
-
-    gap:25px;
-
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
-
-    z-index:1000;
+  padding-left: 5px;
 }
 
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 
-.barre-filtres{
+  text-align: center;
 
-    flex-direction:column;
+  padding: 25px;
 
-    padding:20px;
-
-}
-
-
-}
-.footer{
-
-    background:var(--black);
-
-    color:var(--blanc);
-
-    margin-top:80px;
-
-}
-
-.footer-container{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-
-    gap:40px;
-
-    padding:60px 8%;
-
-}
-
-.footer h2{
-
-    color:var(--vert);
-
-    margin-bottom:15px;
-
-    font-family:var(--font-titre);
-
-}
-
-.footer h3{
-
-    margin-bottom:20px;
-
-    color:var(--blanc);
-
-    font-family:var(--font-titre);
-
-}
-
-.footer p{
-
-    line-height:1.8;
-
-    color:#d8d8d8;
-
-}
-
-.footer a{
-
-    display:block;
-
-    margin-bottom:12px;
-
-    color:#d8d8d8;
-
-    text-decoration:none;
-
-    transition:.3s;
-
-}
-
-.footer a:hover{
-
-    color:var(--vert);
-
-    padding-left:5px;
-
-}
-
-.footer-bottom{
-
-    border-top:1px solid rgba(255,255,255,.1);
-
-    text-align:center;
-
-    padding:25px;
-
-    color:#bbb;
-
+  color: #bbb;
 }
 /* il reste une div  a la dernière section que je dois faire  */
-
 
 /* Laptop */
 @media only screen and (min-width: 1024px) {
@@ -563,25 +533,16 @@ header span{
 }
 
 /* Liste des réservations (scopée à #mt-liste) */
-#mt-liste.liste-section,
-#mt-liste .liste-section {
+#mt-liste {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-md);
 }
 
-#mt-liste .liste-reservations {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--spacing-lg);
-}
-
-/* responsive: passe en grille 2-col sur tablette+/desktop */
-@media only screen and (min-width: 768px) {
-  #mt-liste .liste-reservations {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+#mt-liste:has(> :only-child) {
+    display: block;
   }
-}
+/* responsive: passe en grille 2-col sur tablette+/desktop */
 
 #mt-liste .carte-reservation {
   display: flex;
@@ -590,24 +551,22 @@ header span{
   background-color: var(--blanc);
   border: var(--border-card);
   border-radius: 16px;
-  padding: calc(var(--spacing-md) + 6px) var(--spacing-md) calc(var(--spacing-md) + 6px) var(--spacing-md);
+  padding: calc(var(--spacing-md) + 6px) var(--spacing-md)
+    calc(var(--spacing-md) + 6px) var(--spacing-md);
   box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
 }
 
-#mt-liste .carte-reservation__content {
-  display: grid;
-  gap: 0.35rem;
-}
-
 #mt-liste .carte-reservation h3 {
-  font-size: var(--font-lg);
+  font-family: var(--font-titre);
+  font-size: var(--font-base);
+  font-weight: var(--font-semi-bold);
+  color: var(--black);
   margin: 0;
 }
 
-#mt-liste .carte-reservation__date,
-#mt-liste .carte-reservation__conducteur,
-#mt-liste .carte-reservation__prix {
-  color: #4b5563;
+#mt-liste p {
+  font-family: var(--font-texte);
+  color: var(--black);
   line-height: 1.4;
   margin: 0.15rem 0;
 }
@@ -633,26 +592,30 @@ header span{
 }
 
 #mt-liste .statut-effectue {
-  background-color: #dcfce7;
-  color: #166534;
+  background-color: var(--vert-nuance);
+  color: var(--vert-fonce);
 }
 
 #mt-liste .statut-en_attente,
 #mt-liste .statut-en_cours {
-  background-color: #fef9c3;
-  color: #854d0e;
+  background-color: var(--bleu-nuance);
+  color: #5190dd;
 }
 
 #mt-liste .statut-annule {
-  background-color: #ffe6e6;
-  color: #9b1c1c;
+  background-color: var(--rouge-nuance);
+  color: var(--rouge);
 }
 
 /* État vide / chargement */
-#mt-liste .mt-empty {
+#mt-liste p:only-child {
+  font-family: var(--font-texte);
+  border: var(--border-card);
+  border-radius: 20px;
+  background-color: var(--bleu-nuance);
   text-align: center;
   padding: var(--spacing-lg);
-  color: #6b7280;
+  color: #5190dd;
 }
 
 #mt-liste .mt-loading {
@@ -669,8 +632,12 @@ header span{
 }
 
 @keyframes shimmer {
-  0% { background-position: 200% 0 }
-  100% { background-position: -200% 0 }
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
 }
 
 .statut-annule {
@@ -688,7 +655,7 @@ header span{
   .page-mes-trajets {
     padding: var(--spacing-xl) var(--spacing-3xl) var(--spacing-5xl);
   }
-  
+
   .barre-recherche-tel {
     flex-direction: row;
     align-items: flex-end;
@@ -716,6 +683,12 @@ header span{
   .carte-reservation {
     padding: var(--spacing-4xl);
   }
+
+  #mt-liste {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+  }
 }
 
 /* Responsive : desktop */
@@ -742,4 +715,11 @@ header span{
   .carte-reservation__actions {
     justify-content: flex-end;
   }
+
+  #mt-liste {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+  }
+
 }
