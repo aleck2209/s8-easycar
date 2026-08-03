@@ -339,6 +339,7 @@ header a {
   height: 24px;
   flex-direction: column;
   justify-content: space-between;
+  margin-bottom: 30px;
 }
 .burger span {
   display: block;
@@ -667,70 +668,16 @@ header a {
     color:#bbb;
 
 }
+@media (max-width: 580px) { 
+  .h1{
+    text-align: center;
+  }
+  .badge-vert{
+    display: none;
+  }
+}
 /* il reste une div  a la dernière section que je dois faire  */
 
-/* ==========================================================================
-   RESPONSIVE — TABLETTE (min-width: 768px)
-   ========================================================================== */
-@media only screen and (min-width: 768px) {
-  /* Titre */
-
-  .h1 {
-    font-size: var(--font-2xl);
-  }
-
-  .h2 {
-    font-size: var(--font-xl);
-  }
-
-  .h3 {
-    font-size: var(--font-lg);
-  }
-
-  /* Paragraphe: pour l'ensemble des textes hors titre, button et lien */
-  .text {
-    font-size: var(--font-base);
-  }
-/* .navigation{
-    display:none;
-}
-
-#nav-session{
-    display:none;
-}
-
-.burger{
-    display:flex;
-    border:none;
-}
-
-.navigation{
-
-    display:none;
-
-}
-
-.navigation.active{
-  display:flex;
-    flex-direction:column;
-    position:absolute;
-    top:70px;
-    left:0;
-
-    width:100%;
-
-    background-color:var(--blanc);
-
-    padding:30px;
-
-    gap:25px;
-
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
-
-    z-index:1000;
-}
-    */
-}
 
 @media only screen and (min-width: 768px) {
   /* Titre */
@@ -761,6 +708,7 @@ header span{
 #liste-trajets{
 grid-template-columns:repeat(2,1fr);
 }
+
 
 
 .footer-container{
@@ -918,8 +866,6 @@ grid-template-columns:repeat(3,1fr);
 
 }
 
-
-
 /* Tablette */
 @media only screen and (min-width: 768px) {
   /* Titre */
@@ -961,6 +907,7 @@ grid-template-columns:repeat(2,1fr);
 }
 
 }
+
 
 /* Laptop */
 @media only screen and (min-width: 1024px) {
