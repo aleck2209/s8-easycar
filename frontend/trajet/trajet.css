@@ -227,6 +227,25 @@ header a {
 #nav-session {
   display: flex;
   gap: var(--spacing-md);
+  align-items: center;
+  font-family: var(--font-texte);
+  font-size: var(--font-sm);
+  font-weight: var(--font-regular);
+  color: var(--black);
+}
+
+#nav-session button {
+  font-family: var(--font-btn-lien);
+  font-size: var(--font-sm);
+  font-weight: var(--font-medium);
+  padding: var(--spacing-btn-lien);
+  background-color: var(--vert-fonce);
+  color: var(--blanc);
+  border: none;
+  border-radius: var(--radius-btn);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.4s;
 }
 #nav-session a {
   font-family: var(--font-btn-lien);
@@ -449,6 +468,10 @@ header a {
   outline: 2px solid var(--bleu);
 }
 
+.btn-form {
+  margin-bottom: var(--spacing-md);
+}
+
 .erreurs-form ul {
   list-style: none;
   margin-bottom: var(--spacing-md);
@@ -470,7 +493,7 @@ header a {
 @media only screen and (min-width: 768px) {
   /* Titre */
   .h1 {
-    font-size: var(--font-2xl);
+    font-size: var(--font-xl);
   }
 
   .h2 {
@@ -509,11 +532,11 @@ header a {
 @media only screen and (min-width: 1024px) {
   /* Titre */
   .h1 {
-    font-size: var(--font-3xl);
+    font-size: var(--font-xl);
   }
 
   .h2 {
-    font-size: var(--font-2xl);
+    font-size: var(--font-xl);
   }
 
   /* Liens: style des liens de navigation */
