@@ -11,29 +11,7 @@
   <!-- NAVIGATION — TODO (Dev FS6) -->
 
   <!-- NE PAS MODIFIER l'id — main.js y affiche l'état de connexion -->
-  <header>
-    <a href="../accueil/index.html"><span id="logo">EasyCar</span></a>
-    
-    <!-- <div class="nav-wrapper"> -->
-      <nav class="navigation">
-      <a href="../accueil/index.html"></a>
-      <a href="../mes-trajets/mes-trajets.html">Mes trajets</a>
-      <a href="../proposer/proposer.html">Proposer un trajet</a>
-      <a href="../recherche/recherche.html">Recherche</a>
-      <a href="../trajet/trajet.html">Mes trajets</a>
-      <a href="../dashboard/dashboard.html">Tableau de bord</a>
-      <a href="../confirmation/confirmation.html">Confirmation</a>
-    </nav>
-  
-    <div id="nav-session" > </div>
-     <!-- </div> -->
-
-    <button class="burger" aria-label="Menu de navigation" id="burger">   
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </header>
+  <div id="nav-session"></div>
 
   <main>
     <!-- =====================================================================
@@ -44,11 +22,22 @@
          *** NE PAS MODIFIER les id ci-dessous — main.js les utilise ***
          ===================================================================== -->
     <section class="grille-indicateurs">
-      <div class="carte-indicateur"><p class="label">Trajets disponibles</p><p id="d-trajets" class="valeur"></p></div>
-      <div class="carte-indicateur"><p class="label">Conducteurs actifs</p><p id="d-conducteurs" class="valeur"></p></div>
-      <div class="carte-indicateur"><p class="label">Réservations actives</p><p id="d-reservations" class="valeur"></p></div>
-      <div class="carte-indicateur"><p class="label">Note moyenne</p><p id="d-note" class="valeur"></p></div>
-      <div class="carte-indicateur"><p class="label">Taux d'annulation</p><p id="d-taux-annulation" class="valeur"></p></div>
+      <div class="carte-indicateur vert-fonce">
+      <img src="https://cdn-icons-png.flaticon.com/128/8386/8386729.png">
+      <p class="label text">Trajets disponibles</p><p id="d-trajets " class="valeur"></p></div>
+      <div class="carte-indicateur orange">
+        <img src="https://cdn-icons-png.flaticon.com/128/12266/12266251.png">
+      <p class="label text">Conducteurs actifs</p><p id="d-conducteurs" class="valeur"></p></div>
+      <div class="carte-indicateur bleu">
+        <img src="https://cdn-icons-png.flaticon.com/128/18018/18018681.png">
+        <p class="label text">Réservations actives</p><p id="d-reservations" class="valeur"></p></div>
+      <div class="carte-indicateur vert">
+        <img src="https://cdn-icons-png.flaticon.com/128/8560/8560955.png">
+        <p class="label text">Note moyenne</p><p id="d-note" class="valeur"></p></div>
+      <div class="carte-indicateur rouge"><p class="label text">
+        <img src="https://cdn-icons-png.flaticon.com/128/8695/8695043.png">
+
+        <p>Taux d'annulation</p><p id="d-taux-annulation" class="valeur"></p></div>
     </section>
 
     <!-- =====================================================================
@@ -59,19 +48,33 @@
 
          *** NE PAS MODIFIER l'id ***
          ===================================================================== -->
-    <section>
-      <h2>Top 3 conducteurs</h2>
-      <ol id="d-top-conducteurs"></ol>
+    
+    <div class="cartes">
+      <section class="top-conducteur">
+      <h2 class="h3">Top 3 conducteurs</h2>
+      <div  class="carte liste-conducteur">
+      <ol id="d-top-conducteurs">
+        <li><img src="https://ui-avatars.com/api/?name=Paul+Koumba&background=random" alt="Avatar utilisateur"></li>
+      </ol>
+      </div>
     </section>
 
     <!-- TRAJET VEDETTE — TODO (Dev FS6) : mettre en avant visuellement
          ce trajet (encart distinctif).
          *** NE PAS MODIFIER l'id *** -->
-    <section>
-      <h2>Trajet vedette</h2>
-      <p id="d-trajet-top"></p>
+    <section class="trajet-vedette" >
+      <h2 class="h3">Trajet vedette</h2>
+      <div class="carte trajet-top">
+      <div class="brouillard">
+           <p id="d-trajet-top">
+                <img src="https://picsum.photos/200/100" alt="Trajet aléatoire">
+                </p>
+      </div>
+   
+      </div>
     </section>
 
+</div>
     <!-- =====================================================================
          TABLEAU PAR QUARTIER — TODO (Dev FS6)
          Mettre en forme le tableau (bordures, alternance de lignes,
@@ -79,76 +82,27 @@
 
          *** NE PAS MODIFIER l'id ***
          ===================================================================== -->
-    <section>
-      <h2>Répartition par quartier de départ</h2>
+    <section class="repartition ">
+      <h2 class="h2">Répartition par quartier de départ</h2>
+      <div class="carte-empile">
       <table>
-        <thead><tr><th>Quartier</th><th>Nombre de trajets</th><th>Prix moyen</th></tr></thead>
-        <tbody id="d-trajets-par-quartier"></tbody>
+        <thead class="text"><tr><th>Quartier</th><th>Nombre de trajets</th><th>Prix moyen</th></tr></thead>
+        <tbody id="d-trajets-par-quartier">
+       
+        </tbody>
       </table>
+      </div>
     </section>
   </main>
+  <div id="erreur-globale"  class="badge-rouge" hidden ></div>
+
+  <script src="../functions.js"></script>
+  <script src="../main.js"></script>
+</body>
+</html>
 
   <div id="erreur-globale" hidden></div>
 
-   <footer class="footer">
-
-    <div class="footer-container">
-
-        <div class="footer-logo">
-            <h2>EasyCar</h2>
-            <p>
-                La plateforme de covoiturage qui facilite vos déplacements
-                entre les quartiers de Brazzaville.
-            </p>
-        </div>
-
-        <div class="footer-liens">
-            <h3>Navigation</h3>
-
-            <a href="../index.html">Accueil</a>
-            <a href="../recherche/recherche.html">Recherche</a>
-            <a href="../proposer/proposer.html">Proposer un trajet</a>
-            <a href="../mes-trajets/mes-trajets.html">Mes trajets</a>
-            <a href="../dashboard/dashboard.html">Tableau de bord</a>
-
-        </div>
-
-        <div class="footer-compte">
-            <h3>Compte</h3>
-
-            <a href="../inscription/inscription.html">Inscription</a>
-            <a href="../connexion/connexion.html">Connexion</a>
-
-        </div>
-
-        <div class="footer-contact">
-
-            <h3>Contact</h3>
-
-            <p> Brazzaville, Congo</p>
-
-            <p>Conacte@easycar.com</p>
-
-            <p> +242 06 957 94 03</p>
-
-        </div>
-
-    </div>
-
-    <div class="footer-bottom">
-
-        <p>
-            © 2026 EasyCar. Tous droits réservés.
-        </p>
-
-        <p>
-            Projet pédagogique développé dans le cadre de la formation
-            Akieni Academy.
-        </p>
-
-    </div>
-
-</footer>
   <script src="../functions.js"></script>
   <script src="../main.js"></script>
   <script src="../script.js"></script>
