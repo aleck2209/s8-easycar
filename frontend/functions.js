@@ -127,6 +127,27 @@ function formaterPrix(prix) {
      * Exemple : formaterPrix(500) → "500 FCFA", formaterPrix(1500) → "1 500 FCFA"
      */
     // TODO
+    // formater le prix en chaine de caractere
+    const chiffres = prix.toString();
+
+    // Recuperer la taille de la chaine
+    const nbChiffre = chiffres.length;
+
+    let prixFormater;
+
+    
+    if (nbChiffre <= 3) { // cas de 3 chiffres ex: 500
+        prixFormater = `${prix} FCFA`;
+        return prixFormater;
+    } else if (nbChiffre === 4) { // cas de s chiffres ex: 1500
+        prixFormater = `${chiffres[0]} ${chiffres[1]}${chiffres[2]}${chiffres[3]} FCFA`;
+        return prixFormater;
+    } else if (nbChiffre === 5) { // cas de 5 chiffres ex: 10000
+        prixFormater = `${chiffres[0]}${chiffres[1]} ${chiffres[2]}${chiffres[3]}${chiffres[4]} FCFA`;
+        return prixFormater;
+    } else {
+        return 'Le prix doit être compris entre 100 et 10000';
+    }
 }
 
 function formaterHeure(heure) {
@@ -136,6 +157,8 @@ function formaterHeure(heure) {
      * @return {string} - "07h30"
      */
     // TODO
+    const heureFormater = heure.replace(':', 'h');
+    return heureFormater;
 }
 
 // ============================================================================
