@@ -4,54 +4,49 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BraCovoit — Confirmation</title>
- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/><link rel="stylesheet" href="confirmation.css">
-
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
+  <link rel="stylesheet" href="confirmation.css">
 </head>
 <body id="page-confirmation">
 
-  <!-- NAVIGATION — TODO (Dev FS6) -->
-
-  <!-- NE PAS MODIFIER l'id — main.js y affiche l'état de connexion -->
-  <div id="nav-session"></div>
+  <header>
+    <!-- NE PAS MODIFIER l'id — main.js y affiche l'état de connexion -->
+    <div id="nav-session"></div>
+  </header>
 
   <main>
     <div class="sous-main">
-    <div class="image">
-      <img src="https://media.istockphoto.com/id/1342235356/fr/photo/une-%C3%A9tudiante-afro-am%C3%A9ricaine-joyeuse-utilisant-un-t%C3%A9l%C3%A9phone-portable-debout-%C3%A0-lext%C3%A9rieur.jpg?s=612x612&w=0&k=20&c=nzgEmiiKEV8wSYkf3KFL2xkhjAMUP5G86yg1BekvWDo=">
-      <div class="brouillard"></div>
-    </div>
-    <!-- =====================================================================
-         MESSAGE DE CONFIRMATION — TODO (Dev FS6)
-         Cadre visuel de succès (icône, couleur positive). Le message exact
-         est injecté par main.js à partir du paramètre d'URL.
+      <div class="image">
+        <img src="https://media.istockphoto.com/id/1342235356/fr/photo/une-%C3%A9tudiante-afro-am%C3%A9ricaine-joyeuse-utilisant-un-t%C3%A9l%C3%A9phone-portable-debout-%C3%A0-lext%C3%A9rieur.jpg?s=612x612&w=0&k=20&c=nzgEmiiKEV8wSYkf3KFL2xkhjAMUP5G86yg1BekvWDo=" alt="Étudiante">
+        <div class="brouillard"></div>
+      </div>
 
-         *** NE PAS MODIFIER l'id — main.js injecte le message ***
-         ===================================================================== -->
-    <section class="bloc-confirmation">
-      <img src="https://img.magnific.com/vecteurs-libre/coche-verte-double-cercle_78370-1749.jpg?semt=ais_hybrid&w=740&q=80">
-      <h1 class="h1">Votre réservation est confirmée.</h1>
-      <p id="confirmation-message" class="h3">Préparez-vous pour un trajet confortable vers votre destination.</p>
-    </section>
-  </div>
-    <!-- PROCHAINES ÉTAPES — TODO (Dev FS6) : mettre en forme ces 3 liens
-         (boutons ou cartes de navigation).
-         NE PAS MODIFIER les href/id des liens. -->
+      <section class="bloc-confirmation">
+        <img src="https://img.magnific.com/vecteurs-libre/coche-verte-double-cercle_78370-1749.jpg?semt=ais_hybrid&w=740&q=80" alt="Icône de validation">
+        <h1 class="h1">Votre réservation est confirmée.</h1>
+        <p id="confirmation-message" class="h3">Préparez-vous pour un trajet confortable vers votre destination.</p>
+      </section>
+    </div>
+
     <section class="prochaines-etapes">
       <h2 class="h2">Prochaines étapes</h2>
       <div class="conteneur_bouton">
-      <button class="carte">
-        <span class="material-symbols-outlined">home</span>
-        <a href="../accueil/index.html"  class="btn">Retour à l'accueil</a></button>
-      <button class="carte ">  
-        <span class="material-symbols-outlined icon-blanche">directions_car</span>
-        <a id="lien-mes-trajets" href="../mes-trajets/mes-trajets.html" class="btn">Voir mes trajets</a></button>
-      <button class="carte">
-        <span class="material-symbols-outlined">pin_road_2</span>
-        <a href="../recherche/recherche.html"  class="btn">Autres trajets</a>
-      </button>
-    </div>
-    </section>   
+        <a href="../accueil/index.html" class="carte">
+          <span class="material-symbols-outlined">home</span>
+          <span class="btn">Retour à l'accueil</span>
+        </a>
+        
+        <a id="lien-mes-trajets" href="../mes-trajets/mes-trajets.html" class="carte">  
+          <span class="material-symbols-outlined icon-blanche">directions_car</span>
+          <span class="btn">Voir mes trajets</span>
+        </a>
 
+        <a href="../recherche/recherche.html" class="carte">
+          <span class="material-symbols-outlined">pin_road_2</span>
+          <span class="btn">Autres trajets</span>
+        </a>
+      </div>
+    </section>   
   </main>
 
   <script src="../functions.js"></script>
