@@ -1,20 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BraCovoit — Connexion</title>
-  <link rel="stylesheet" href="login.css">
-</head>
-<body id="page-login">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EasyCar — Connexion</title>
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body id="page-login">
+    <!-- NAVIGATION — TODO (Dev FS7) -->
 
-  <!-- NAVIGATION — TODO (Dev FS7) -->
+    <!-- NE PAS MODIFIER l'id — main.js y affiche l'état de connexion -->
+    <div class="nav-session" id="nav-session"></div>
 
-  <!-- NE PAS MODIFIER l'id — main.js y affiche l'état de connexion -->
-  <div id="nav-session"></div>
-
-  <main>
-    <!-- =====================================================================
+    <main class="main">
+      <!-- =====================================================================
          FORMULAIRE — TODO (Dev FS7)
          Mettre en forme le formulaire de connexion : téléphone, mot de
          passe. Prévoir un layout clair en colonne, avec des labels
@@ -22,28 +21,47 @@
 
          *** NE PAS MODIFIER les id ci-dessous — main.js les utilise ***
          ===================================================================== -->
-    <form id="form-login">
-      <label for="l-telephone">Téléphone</label>
-      <input type="tel" id="l-telephone" placeholder="066123456">
+      <section class="presentation">
+        <section class="presentation-container">
+          <p class="h1 easycar">EasyCar</p>
+          <p class="h1 slogan">Le Co-voiturage au cœur de Brazzaville.</p>
+          <p class="text description">
+            Rejoignez la communauté de co-voiturage easycar. De Bacongo à
+            Kintélé, déplacez-vous avec élégance, sécurité et confort.
+          </p>
+        </section>
+      </section>
 
-      <label for="l-mot-de-passe">Mot de passe</label>
-      <input type="password" id="l-mot-de-passe">
+      <section class="section-form">
+        <section class="en-tete-form">
+          <h1 class="h1 titre-page">Connexion</h1>
+          <p class="text">Connectez-vous pour continuer</p>
+        </section>
 
-      <button type="submit">Se connecter</button>
-    </form>
+        <form class="form-login" id="form-login">
+          <label class="text label" for="l-telephone">Téléphone</label>
+          <input class="input" type="tel" id="l-telephone" placeholder="066123456" />
 
-    <!-- Zone d'erreurs de validation — TODO (Dev FS7) : mettre en forme la
+          <label class="text label" for="l-mot-de-passe">Mot de passe</label>
+          <input class="input" type="password" id="l-mot-de-passe" placeholder="********"/>
+
+          <button class="btn btn-form" type="submit">Se connecter</button>
+        </form>
+
+        <!-- Zone d'erreurs de validation — TODO (Dev FS7) : mettre en forme la
          liste <ul><li> injectée par main.js en cas de formulaire invalide.
          NE PAS MODIFIER l'id. -->
-    <div id="erreurs-form" hidden></div>
+        <div class="erreurs-form" id="erreurs-form" hidden></div>
 
-    <!-- LIEN VERS INSCRIPTION — TODO (Dev FS7) : lien "Pas encore de compte ?
+        <!-- LIEN VERS INSCRIPTION — TODO (Dev FS7) : lien "Pas encore de compte ?
          S'inscrire" pointant vers ../inscription/inscription.html -->
-  </main>
+         <p class="text center">Pas encore de compte ? <a class="link link-login" href="../inscription/inscription.html">S'inscrire</a></p>
+      </section>
+    </main>
 
-  <div id="erreur-globale" hidden></div>
+    <div id="erreur-globale" hidden></div>
 
-  <script src="../functions.js"></script>
-  <script src="../main.js"></script>
-</body>
+    <script src="../functions.js"></script>
+    <script src="../main.js"></script>
+  </body>
 </html>

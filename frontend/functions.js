@@ -27,6 +27,14 @@ function compterTrajetsAujourdhui(trajets, dateAujourdhui) {
      * Exemple : compterTrajetsAujourdhui([{date:"2026-07-27"},{date:"2026-07-28"}], "2026-07-27") → 1
      */
     // TODO
+  let compteur = 0;
+
+    for (let trajet of trajets) {
+        if (trajet.date === dateAujourdhui) {
+            compteur++;
+        }
+    }
+    return compteur;
 }
 
 function formaterQuartierPrincipal(compteParQuartier) {
@@ -37,6 +45,18 @@ function formaterQuartierPrincipal(compteParQuartier) {
      * Si l'objet est vide, retourne "Aucun trajet".
      */
     // TODO
+if (Object.keys(compteParQuartier).length === 0){
+    return "Aucun trajet";
+}
+let meilleur ="";
+let Maximum=0;
+        for(let quartier in compteParQuartier){
+            if(compteParQuartier[quartier] > Maximum){
+                Maximum = compteParQuartier[quartier];
+                meilleur = quartier;
+            }
+        }
+    return meilleur + " (" + Maximum + " trajets)";
 }
 
 // ============================================================================
@@ -52,6 +72,17 @@ function filtrerParQuartierDepart(trajets, quartier) {
      * Si quartier est vide ou null, retourne tous les trajets.
      */
     // TODO
+
+    if(!quartier){
+        return trajets;
+    }
+let resultat = [];
+    for( let trajet of trajets){
+        if(trajet.quartier_depart === quartier){
+            resultat.push(trajet)
+        }
+    }
+    return resultat;
 }
 
 function rechercherParMotCle(trajets, motCle) {
@@ -64,6 +95,24 @@ function rechercherParMotCle(trajets, motCle) {
      * Si motCle est vide, retourne tous les trajets.
      */
     // TODO
+
+    if(!motCle){
+        return trajets
+    }
+
+    let resultat = [];
+
+    for(let trajet of trajets){
+        let depart = trajet.quartierDepart;
+        let arrivé = trajet.quartierArrivee;
+        let commentaire = trajet.commentaire;
+
+        if(depart.includes(motCle) || arrivé.includes(motCle) || commentaire.includes(motCle)){
+            resultat.push(trajet);
+        }
+    }
+
+    return resultat;
 }
 
 // ============================================================================
@@ -215,6 +264,40 @@ function validerFormulaireInscription(formulaire) {
      * - mot_de_passe obligatoire, au moins 4 caractères
      */
     // TODO
+    // destructuration de l'objet formulaire
+    const {nom, telephone, mot_de_passe} = formulaire;
+
+    const nomTrim = nom.trim();
+
+    let resultat = {
+        valide: true,
+        erreurs: []
+    };
+
+    if (!nomTrim) {
+        resultat.valide = false;
+        resultat.erreurs.push('Le nom est obligatoire.')
+        return resultat;
+    } else if (!telephone) {
+        resultat.valide = false;
+        resultat.erreurs.push('Le numéro de téléphone est obligatoire.');
+        return resultat;
+    } else if (telephone.length < 9) {
+        resultat.valide = false;
+        resultat.erreurs.push('Le numéro de téléphone doit contenir au moins 9 chiffres.');
+        return resultat;
+    } else if (!mot_de_passe) {
+        resultat.valide = false;
+        resultat.erreurs.push('Le mot de passe est obligatoire.');
+        return resultat;
+    } else if (mot_de_passe.lenght < 4) {
+        resultat.valide = false;
+        resultat.erreurs.push('Le mot de passe doit contenir au moins 4 caractères.');
+        return resultat;
+    } else {
+        resultat.valide = true;
+        return resultat;
+    }   
 }
 
 function validerFormulaireLogin(formulaire) {
@@ -228,6 +311,25 @@ function validerFormulaireLogin(formulaire) {
      * - mot_de_passe obligatoire
      */
     // TODO
+    const {telephone, mot_de_passe} = formulaire;
+
+    let resultat = {
+        valide: true,
+        erreurs: []
+    }
+
+    if (!telephone) {
+        resultat.valide = false;
+        resultat.erreurs.push('Le numéro de téléphone est obligatoire.');
+        return resultat;
+    } else if (!mot_de_passe) {
+        resultat.valide = false;
+        resultat.erreurs.push('Le mot de passe est obligatoire.');
+        return resultat;
+    } else {
+        resultat.valide = true;
+        return resultat;
+    }
 }
 
 // ============================================================================
