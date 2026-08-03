@@ -213,6 +213,24 @@ header a {
 #nav-session {
   display: flex;
   gap: var(--spacing-md);
+  align-items: center;
+  font-family: var(--font-texte);
+  font-size: var(--font-sm);
+  font-weight: var(--font-regular);
+  color: var(--black);
+}
+#nav-session button {
+  font-family: var(--font-btn-lien);
+  font-size: var(--font-sm);
+  font-weight: var(--font-medium);
+  padding: var(--spacing-btn-lien);
+  background-color: var(--vert-fonce);
+  color: var(--blanc);
+  border: none;
+  border-radius: var(--radius-btn);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.4s;
 }
 #nav-session a {
   font-family: var(--font-btn-lien);
@@ -507,9 +525,9 @@ header a {
   box-shadow: 0 18px 40px rgba(15, 23, 42, 0.04);
 }
 
-.footer p{
-    font-family: var(--font-texte);
-    line-height:1.8;
+.footer p {
+  font-family: var(--font-texte);
+  line-height: 1.8;
 }
 
 .resume-card {
@@ -545,13 +563,13 @@ header a {
   gap: var(--spacing-md);
 }
 
-.footer a{
-    font-family: var(--font-btn-lien);
-    display:block;
+.footer a {
+  font-family: var(--font-btn-lien);
+  display: block;
 }
 #mt-liste:has(> :only-child) {
-    display: block;
-  }
+  display: block;
+}
 /* responsive: passe en grille 2-col sur tablette+/desktop */
 
 #mt-liste .carte-reservation {
@@ -731,5 +749,4 @@ header a {
     grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-md);
   }
-
 }
