@@ -488,7 +488,7 @@ def identifier_trajet_le_plus_reserve(trajets, reservations):
     # compter les trajets ayant les reservations les plus actives par trajet_id
     Compteurs = {}
     for reservation in reservations:
-        if reservation["statut"] != "annulé":
+        if reservation["statut"] != "annule":
             king = reservation["trajet_id"]
             if king in Compteurs:
                 Compteurs[king] += 1
