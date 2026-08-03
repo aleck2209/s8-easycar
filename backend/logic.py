@@ -476,8 +476,8 @@ def top_conducteurs_par_note(conducteurs, n=3):
         -> [{"nom": "Jean", "note": 4.9}, {"nom": "Sandra", "note": 4.7}]
     """
     # listes triées
-    conducteurs_tries = sorted(conducteurs, key=lambda c: c["note"], reverse=True)
-    return conducteurs_tries[:3]
+    conducteurs_tries = sorted(conducteurs, key=lambda c:c["note"], reverse=True)
+    return conducteurs_tries[:n]
 
 
 def calculer_prix_moyen_par_quartier(trajets):
@@ -565,9 +565,9 @@ def identifier_trajet_le_plus_reserve(trajets, reservations):
         if reservation["statut"] != "annulé":
             king = reservation["trajet_id"]
             if king in Compteurs:
-                Compteurs["king"] += 1
+                Compteurs[king] += 1
             else:
-                Compteurs["king"] = 1
+                Compteurs[king] = 1
     # aucune réservation active n'existe, retourner None            
     if len(Compteurs) == 0:
             return None               
@@ -577,7 +577,7 @@ def identifier_trajet_le_plus_reserve(trajets, reservations):
     meilleur_id = None
     meilleur_nombre = -1
     for king in sorted(Compteurs.keys()):
-        if Compteurs[tid] > meilleur_nombre:
+        if Compteurs[king] > meilleur_nombre:
             meilleur_nombre = Compteurs[king]
             meilleur_id = king
 
@@ -638,7 +638,7 @@ def calculer_indicateurs_dashboard(trajets, reservations, conducteurs):
     total_trajets_disponibles = 0
     for trajet in trajets:
          if trajet["places_dispo"] >= 1:
-            total_trajets_disponibles += 1
+             total_trajets_disponibles += 1
    # total_conducteurs_actifs
     total_conducteurs_actifs = len(conducteurs)      
    # total_reservations_actives
@@ -647,15 +647,15 @@ def calculer_indicateurs_dashboard(trajets, reservations, conducteurs):
         if reservation["statut"] == "effectue" or reservation["statut"] == "en_attente":
             total_reservations_actives += 1   
     # note_moyenne_conducteurs
-        if len(conducteurs) == 0:
-            note_moyenne_conducteurs = 0.0
-        else:
-            somme_notes = 0
-            for conducteur in conducteurs:
-                somme_notes += conducteur["note"]
-            note_moyenne_conducteurs = round(somme_notes / len(conducteurs), 1)
+    if len(conducteurs) == 0:
+        note_moyenne_conducteurs = 0.0
+    else:
+        somme_notes = 0
+        for conducteur in conducteurs:
+            somme_notes += conducteur["note"]
+        note_moyenne_conducteurs = round(somme_notes / len(conducteurs), 1)
     
-        return {"total_trajets_disponibles": total_trajets_disponibles,
+    return {"total_trajets_disponibles": total_trajets_disponibles,
                     "total_conducteurs_actifs": total_conducteurs_actifs,
                     "total_reservations_actives": total_reservations_actives,
                     "note_moyenne_conducteurs": note_moyenne_conducteurs, }
