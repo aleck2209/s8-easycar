@@ -255,6 +255,7 @@ header a {
   height: 24px;
   flex-direction: column;
   justify-content: space-between;
+  margin-bottom: 30px;
 }
 .burger span {
   display: block;
@@ -342,14 +343,16 @@ header a {
   font-family: var(--font-titre);
 }
 
-.footer p {
-  line-height: 1.8;
+.footer p{
+    font-family: var(--font-texte);
+    line-height:1.8;
 
   color: #d8d8d8;
 }
 
-.footer a {
-  display: block;
+.footer a{
+    font-family: var(--font-btn-lien);
+    display:block;
 
   margin-bottom: 12px;
 
@@ -477,6 +480,7 @@ header a {
   .h3 {
     font-size: var(--font-lg);
   }
+
 
   /* Paragraphe: pour l'ensemble des textes hors titre, button et lien */
   .text {

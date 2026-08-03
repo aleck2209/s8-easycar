@@ -241,6 +241,7 @@ header a {
   height: 24px;
   flex-direction: column;
   justify-content: space-between;
+  margin-bottom: 30px;
 }
 .burger span {
   display: block;
@@ -506,6 +507,11 @@ header a {
   box-shadow: 0 18px 40px rgba(15, 23, 42, 0.04);
 }
 
+.footer p{
+    font-family: var(--font-texte);
+    line-height:1.8;
+}
+
 .resume-card {
   display: flex;
   align-items: center;
@@ -539,6 +545,10 @@ header a {
   gap: var(--spacing-md);
 }
 
+.footer a{
+    font-family: var(--font-btn-lien);
+    display:block;
+}
 #mt-liste:has(> :only-child) {
     display: block;
   }
