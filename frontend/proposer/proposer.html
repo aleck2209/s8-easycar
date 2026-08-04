@@ -32,7 +32,7 @@
       </button>
     </header>
 
-    <main>
+    <main class="main">
       <!-- =====================================================================
          FORMULAIRE — TODO (Dev FS4)
          Mettre en forme le formulaire de proposition de trajet : les deux
@@ -43,32 +43,70 @@
 
          *** NE PAS MODIFIER les id ci-dessous — main.js les utilise ***
          ===================================================================== -->
-      <form id="form-proposer">
-        <label for="p-depart">Quartier de départ</label>
-        <select id="p-depart"></select>
+      <h1 class="h1">Proposer trajet</h1>
 
-        <label for="p-arrivee">Quartier d'arrivée</label>
-        <select id="p-arrivee"></select>
+      <section class="content">
+        <form class="form-proposer" id="form-proposer">
+          <section class="section-form">
+            <label class="text label" for="p-depart">Quartier de départ</label>
+            <select class="text input" id="p-depart"></select>
+          </section>
 
-        <label for="p-heure">Heure (HH:MM)</label>
-        <input type="text" id="p-heure" placeholder="07:30" />
+          <section class="section-form">
+            <label class="text label" for="p-arrivee">Quartier d'arrivée</label>
+            <select class="text input" id="p-arrivee"></select>
+          </section>
 
-        <label for="p-places">Places disponibles</label>
-        <input type="number" id="p-places" min="1" max="8" />
+          <section class="section-form">
+            <label class="text label" for="p-heure">Heure (HH:MM)</label>
+            <input class="text input" type="text" id="p-heure" placeholder="07:30" />
+          </section>
 
-        <label for="p-prix">Prix par place (FCFA)</label>
-        <input type="number" id="p-prix" min="1" />
+          <section class="section-form">
+            <label class="text label" for="p-places">Places disponibles</label>
+            <input class="text input" type="number" id="p-places" min="1" max="8" placeholder="[1 - 8]"/>
+          </section>
 
-        <button type="submit">Publier mon trajet</button>
-      </form>
+          <section class="section-form">
+            <label class="text label" for="p-prix">Prix par place (FCFA)</label>
+            <input class="text input" type="number" id="p-prix" min="1" placeholder="ex: 2500"/>
+          </section>
 
-      <!-- Zone d'erreurs de validation — TODO (Dev FS4) : mettre en forme la
-         liste <ul><li> injectée par main.js en cas de formulaire invalide.
-         NE PAS MODIFIER l'id. -->
-      <div id="erreurs-form" hidden></div>
+          <button class="btn" type="submit">Publier mon trajet</button>
+          <!-- Zone d'erreurs de validation — TODO (Dev FS4) : mettre en forme la
+             liste <ul><li> injectée par main.js en cas de formulaire invalide.
+             NE PAS MODIFIER l'id. -->
+          <div class="erreurs-form" id="erreurs-form" hidden></div>
+        </form>
 
-      <!-- BLOC D'AIDE — TODO (Dev FS4) : encart explicatif optionnel
-         (ex. rappel que le prix est libre, conseils de sécurité) -->
+        <!-- BLOC D'AIDE — TODO (Dev FS4) : encart explicatif optionnel
+           (ex. rappel que le prix est libre, conseils de sécurité) -->
+        <section class="conseils">
+          <h2 class="h2 bleu space">Conseils</h2>
+          <article class="conseil">
+            <h3 class="h3 bleu space">Fixez un prix juste</h3>
+            <p class="text bleu">
+              Fixez un prix adapté à la distance parcourue et aux frais engagés
+              pour le trajet.
+            </p>
+          </article>
+          <article class="conseil">
+            <h3 class="h3 bleu space">Vérifiez vos informations</h3>
+            <p class="text bleu">
+              Avant de publier votre trajet, assurez-vous que les lieux de
+              départ et d'arrivée, l'heure, la date et le nombre de places
+              disponibles sont corrects.
+            </p>
+          </article>
+          <article class="conseil">
+            <h3 class="h3 bleu space">Conduisez en toute sécurité</h3>
+            <p class="text bleu">
+              Respectez le Code de la route, évitez l'utilisation du téléphone
+              au volant et assurez-vous que votre véhicule est en bon état.
+            </p>
+          </article>
+        </section>
+      </section>
     </main>
 
     <div id="erreur-globale" hidden></div>

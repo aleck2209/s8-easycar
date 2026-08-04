@@ -17,6 +17,7 @@
   --rouge: #ff3647;
   --vert: #00a572;
   --vert-fonce: #006c49;
+  --bleu-fonce: #5190dd;
   --blanc: #ffffff;
   --gris: #eeeeee;
   --black: #0f172a;
@@ -627,7 +628,7 @@ header a {
 #mt-liste .statut-en_attente,
 #mt-liste .statut-en_cours {
   background-color: var(--bleu-nuance);
-  color: #5190dd;
+  color: var(--bleu-fonce);
 }
 
 #mt-liste .statut-annule {
@@ -643,7 +644,7 @@ header a {
   background-color: var(--bleu-nuance);
   text-align: center;
   padding: var(--spacing-lg);
-  color: #5190dd;
+  color: var(--bleu-fonce);
 }
 
 #mt-liste .mt-loading {
