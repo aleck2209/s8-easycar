@@ -166,108 +166,9 @@
   background-color: var(--vert);
 }
 
-/* Tablette */
-@media only screen and (min-width: 768px) {
-  /* Titre */
-
-  .h1 {
-    font-size: var(--font-2xl);
-  }
-
-  .h2 {
-    font-size: var(--font-xl);
-  }
-
-  .h3 {
-    font-size: var(--font-lg);
-  }
-
-  /* Paragraphe: pour l'ensemble des textes hors titre, button et lien */
-  .text {
-    font-size: var(--font-base);
-  }
-  /* .navigation{
-    display:none;
-}
-
-#nav-session{
-    display:none;
-}
-
-.burger{
-    display:flex;
-    border:none;
-}
-
-.navigation{
-
-    display:none;
-
-}
-
-.navigation.active{
-  display:flex;
-    flex-direction:column;
-    position:absolute;
-    top:70px;
-    left:0;
-
-    width:100%;
-
-    background-color:var(--blanc);
-
-    padding:30px;
-
-    gap:25px;
-
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
-
-    z-index:1000;
-}
-    */
-}
-
 /* Laptop */
-@media only screen and (min-width: 1024px) {
-  /* Titre */
-  .h1 {
-    font-size: var(--font-3xl);
-  }
 
-  .h2 {
-    font-size: var(--font-2xl);
-  }
 
-  /* Liens: style des liens de navigation */
-  .link {
-    font-size: var(--font-base);
-  }
-
-  .btn,
-  .btn-link {
-    font-size: var(--font-base);
-  }
-}
-
-/* Laptop-L ou Desktop */
-
-@media only screen and (min-width: 1024px) {
-  .cartes-indicateurs {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .hero {
-    padding: var(--spacing-5xl);
-  }
-
-  .navigation {
-    display: flex;
-  }
-
-  .burger {
-    display: none;
-  }
-}
 
 /* suite */
 header {
@@ -715,71 +616,6 @@ header a {
   }
 }
 
-@media only screen and (min-width: 1024px) {
-  /* Titre */
-  .h1 {
-    font-size: var(--font-3xl);
-  }
-
-  .h2 {
-    font-size: var(--font-2xl);
-  }
-
-  /* Liens: style des liens de navigation */
-  .link {
-    font-size: var(--font-base);
-  }
-
-  .btn,
-  .btn-link {
-    font-size: var(--font-base);
-  }
-}
-
-/* Laptop-L ou Desktop */
-@media only screen and (min-width: 1024px) {
-  .cartes-indicateurs {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .hero {
-    padding: var(--spacing-5xl);
-  }
-
-  .navigation {
-    display: flex;
-  }
-
-  .burger {
-    display: none;
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  /* Titre */
-  .h1 {
-    font-size: var(--font-3xl);
-  }
-
-  .h2 {
-    font-size: var(--font-2xl);
-  }
-
-  /* Liens: style des liens de navigation */
-  .link {
-    font-size: var(--font-base);
-  }
-
-  .btn,
-  .btn-link {
-    font-size: var(--font-base);
-  }
-
-  #liste-trajets {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
 @media only screen and (max-width: 990px) {
   header {
     padding: var(--spacing-sm);
@@ -881,7 +717,7 @@ header a {
   }
 }
 
-/* Laptop */
+/* seule media de 1024px gardé */
 @media only screen and (min-width: 1024px) {
   /* Titre */
   .h1 {
@@ -901,77 +737,25 @@ header a {
   .btn-link {
     font-size: var(--font-base);
   }
+  /* ajout des cartes indicateur */
+  .cartes-indicateurs {
+    grid-template-columns: repeat(4, 1fr);
+  }
 
+  .hero {
+    padding: var(--spacing-5xl);
+  }
+
+  .navigation {
+    display: flex;
+  }
+
+  .burger {
+    display: none;
+  }
   #liste-trajets {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-.footer {
-  background: var(--black);
-
-  color: var(--blanc);
-
-  margin-top: 80px;
-}
-
-.footer-container {
-  display: grid;
-
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-
-  gap: 40px;
-
-  padding: 60px 8%;
-}
-
-.footer h2 {
-  color: var(--vert);
-
-  margin-bottom: 15px;
-
-  font-family: var(--font-titre);
-}
-
-.footer h3 {
-  margin-bottom: 20px;
-
-  color: var(--blanc);
-
-  font-family: var(--font-titre);
-}
-
-.footer p {
-  line-height: 1.8;
-
-  color: #d8d8d8;
-}
-
-.footer a {
-  display: block;
-
-  margin-bottom: 12px;
-
-  color: #d8d8d8;
-
-  text-decoration: none;
-
-  transition: 0.3s;
-}
-
-.footer a:hover {
-  color: var(--vert);
-
-  padding-left: 5px;
-}
-
-.footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-
-  text-align: center;
-
-  padding: 25px;
-
-  color: #bbb;
-}
 /* il reste une div  a la dernière section que je dois faire  */
