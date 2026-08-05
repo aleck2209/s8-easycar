@@ -1,5 +1,5 @@
 
-# BraCovoit — Covoiturage inter-quartiers, Brazzaville
+# EasyCar — Covoiturage inter-quartiers, Brazzaville
 
 Bienvenue dans votre startup. Ce dépôt est le **squelette** de l'application : un mini-site de 9 pages pour organiser le covoiturage entre habitants des quartiers de Brazzaville. La structure est déjà en place ; **votre équipe complète les fonctions manquantes et construit les pages**.
 
@@ -50,17 +50,33 @@ l'API est bien ouvert et actif (pas d'erreur affichée dedans). Si vous   venez 
 
 Chaque page est dans son propre sous-dossier avec son fichier CSS dédié. L'essentiel de votre note porte sur vos **pages HTML/CSS** (structure sémantique, box model, Flexbox/Grid, responsive mobile/tablette/desktop). Chacun complète aussi **2 fonctions JS** dans `frontend/functions.js`.
 
-| Qui | Dossier & page | Fonctions JS |
-| --- | --- | --- |
-| Dev FS1 | `frontend/accueil/index.html` + `accueil.css` — page d'accueil, hero + indicateurs clés | `compterTrajetsAujourdhui`, `formaterQuartierPrincipal` |
-| Dev FS2 | `frontend/recherche/recherche.html` + `recherche.css` — recherche et filtres | `filtrerParQuartierDepart`, `rechercherParMotCle` |
-| Dev FS3 | `frontend/trajet/trajet.html` + `trajet.css` — détail d'un trajet + réservation | `formaterPrix`, `formaterHeure` |
-| Dev FS4 | `frontend/proposer/proposer.html` + `proposer.css` — formulaire conducteur | `validerFormulaireProposer`, `formaterMessageConfirmation` |
-| Dev FS5 | `frontend/mes-trajets/mes-trajets.html` + `mes-trajets.css` — historique passager | `filtrerReservationsParStatut`, `calculerTotalDepenseParPassager` |
-| Dev FS6 | `frontend/dashboard/dashboard.html` + `dashboard.css` **ET** `frontend/confirmation/confirmation.html` + `confirmation.css` | `calculerPourcentageOccupation`, `getBadgeDisponibilite` |
-| Dev FS7 | `frontend/inscription/inscription.html` + `inscription.css` **ET** `frontend/login/login.html` + `login.css` | `validerFormulaireInscription`, `validerFormulaireLogin` |
+| Qui | Dossier & page | Fonctions JS | Developpeur |
+| --- | --- | --- | --- |
+| Dev FS1 | `frontend/accueil/index.html` + `accueil.css` — page d'accueil, hero + indicateurs clés | `compterTrajetsAujourdhui`, `formaterQuartierPrincipal` | AKOMBO Samuel |
+| Dev FS2 | `frontend/recherche/recherche.html` + `recherche.css` — recherche et filtres | `filtrerParQuartierDepart`, `rechercherParMotCle` | AKOMBO Samuel |
+| Dev FS3 | `frontend/trajet/trajet.html` + `trajet.css` — détail d'un trajet + réservation | `formaterPrix`, `formaterHeure` | APEMBET-ALECK Virgile Yann |
+| Dev FS4 | `frontend/proposer/proposer.html` + `proposer.css` — formulaire conducteur | `validerFormulaireProposer`, `formaterMessageConfirmation` |  Ndende Christ |
+| Dev FS5 | `frontend/mes-trajets/mes-trajets.html` + `mes-trajets.css` — historique passager | `filtrerReservationsParStatut`, `calculerTotalDepenseParPassager` | Bassa Japhet Piergy |
+| Dev FS6 | `frontend/dashboard/dashboard.html` + `dashboard.css` **ET** `frontend/confirmation/confirmation.html` + `confirmation.css` | `calculerPourcentageOccupation`, `getBadgeDisponibilite` | OWALA Brichelvie Jeannelle |
+| Dev FS7 | `frontend/inscription/inscription.html` + `inscription.css` **ET** `frontend/login/login.html` + `login.css` | `validerFormulaireInscription`, `validerFormulaireLogin` | APEMBET-ALECK Virgile Yann |
 
 Chaque page contient des commentaires `<!-- TODO -->` indiquant le travail attendu, avec le layout, les éléments à construire et les classes CSS que `main.js` utilise déjà pour injecter le contenu dynamique. **Les éléments marqués "NE PAS MODIFIER" (IDs, scripts, formulaires) sont le câblage vers le backend — ne les changez pas, sinon les données ne s'afficheront plus.**
+
+## Repartition Data Science
+
+|**NOM**|**FONCTIONNALITÉS**|
+|---|---|
+|**François**(9 fonctions)|**Zone A - Recherche et disponibilité (3**<br>**fonctions)**<br>• filtrer_trajets_disponibles()<br>• trier_par_heure()<br>• trier_par_prix_croissant()|
+||**Zone C - Statistiques et tableau de bord (5**<br>**fonctions)**<br>• compter_trajets_par_quartier_depart()<br>• top_conducteurs_par_note()<br>• calculer_prix_moyen_par_quartier()<br>• identifier_trajet_le_plus_reserve()<br>• calculer_indicateurs_dashboard()|
+||**Zone D - Comptes et authentification (1**<br>**fonction)**<br>• verifier_telephone_disponible()|
+|**Rosy**(8 fonctions)|**Zone A - Recherche et disponibilité (2**<br>**fonctions)**<br>• filtrer_par_quartier_depart()<br>• filtrer_par_trajet_complet()|
+||**Zone B - Réservations et suivi (5 fonctions)**<br>• compter_reservations_par_trajet()<br>• verifier_place_disponible()<br>• filtrer_reservations_par_statut()<br>• historique_reservations_passager()<br>• calculer_taux_annulation()|
+||**Zone D - Comptes et authentification (1**<br>**fonction)**<br>• trouver_compte_par_telephone()|
+
+
+
+**TOTAL : 17 fonctions** 
+
 
 ## Équipe Data Science — workflow
 

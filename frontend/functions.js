@@ -100,17 +100,18 @@ function rechercherParMotCle(trajets, motCle) {
     return trajets;
   }
 
+  const mot = motCle.toLowerCase()
   let resultat = [];
 
   for (let trajet of trajets) {
-    let depart = trajet.quartierDepart;
-    let arrivé = trajet.quartierArrivee;
-    let commentaire = trajet.commentaire;
+    let depart = trajet.quartier_depart.toLowerCase();
+    let arrive = trajet.quartier_arrivee.toLowerCase();
+    let commentaire = trajet.commentaire.toLowerCase();
 
     if (
-      depart.includes(motCle) ||
-      arrivé.includes(motCle) ||
-      commentaire.includes(motCle)
+      depart.includes(mot) ||
+      arrive.includes(mot) ||
+      commentaire.includes(mot)
     ) {
       resultat.push(trajet);
     }
